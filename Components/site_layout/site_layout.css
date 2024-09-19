@@ -1,0 +1,25 @@
+#site-top-nav{
+    display: flex;
+    background-color: antiquewhite;
+    align-items: center;
+    justify-content: space-between;
+    flex-basis: auto;
+}
+
+#site-top-menu{
+    display: flex;
+    justify-content: space-around;
+    width: 25%;
+}
+
+#site-top-nav #logo{
+    margin-left: 2%;
+    
+}
+
+#claim-button{
+    margin-right: 2%;
+    background-color: aquamarine;
+}
+
+/*Ignore the weird colours, they are for testing purposes*/
