@@ -1,0 +1,16 @@
+#footer{
+    display: flex;
+    background-color: blue;
+    align-items: center;
+    justify-content: space-between;
+    flex-basis: auto;
+}
+
+#footerMenu{
+    display: flex;
+    justify-content: space-around;
+    width: 25%;
+}
+
+
+
