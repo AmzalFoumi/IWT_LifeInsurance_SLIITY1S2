@@ -1,0 +1,32 @@
+#banner{
+    display: flex;
+    max-width: 100%;
+    margin: 2%;
+
+    overflow: hidden;
+
+    border-radius: 3rem;
+    /*border: 1px solid;*/
+
+    background-color: azure;
+}
+
+#banner img{
+    width: 80%;
+    margin-right: 1%;
+    
+}
+
+#bannerText{
+    text-align: justify;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    padding: 1%;
+}
+
+#bannerText p {
+    
+}
