@@ -1,3 +1,4 @@
 <?php
-    include "DB_connect.php"
+    require_once "DB_connect.php"
 ?>
+
