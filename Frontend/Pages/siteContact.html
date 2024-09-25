@@ -29,7 +29,7 @@
                 </div>  
                 <div>
                     <div>
-                        <form method="post" action="../../Backend/siteContact.php">
+                        <form id="contactForm" method="post"><!--method="post" action="../../Backend/siteContact.php"-->
                             <label for="fullName">Full Name: </label>
                             <input type="text" name="fullName" id="fullName">
                             <br>
@@ -48,7 +48,7 @@
                             <br>
 
                             <label for="mobNum">Mobile Number: </label>
-                            <input type="tel" name="mobNum" id="mobNum" pattern="[0-9]{2}-[0-9]{3}-[0-9]{4}">
+                            <input type="tel" name="mobNum" id="mobNum" pattern="[0-9]{10}">
                             <br>
 
                             <label for="email">Email: </label>
@@ -72,6 +72,7 @@
                             <input type="reset" value="Cancel">
 
                         </form>
+                        <div id="responseArea"></div>
                     </div>
                 </div>  
             </div>
@@ -84,5 +85,6 @@
 
         <footer id="footer-container"></footer>
         <script src="../Assets/JS/siteHeaderFooter.js"></script>
+        <script src="../Assets/JS/siteContact.js"></script>
 	</body>
 </html>
