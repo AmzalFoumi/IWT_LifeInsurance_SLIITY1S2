@@ -1,0 +1,85 @@
+/*Edit or remove the solid black borders later. Added only for ease of reference*/
+
+/*CSS related to the main banner starts*/
+#banner{
+    display: flex;
+    max-width: 100%;
+    margin: 2%;
+    overflow: hidden;
+    border-radius: 3rem;
+    background-color: azure;
+    border: solid black;
+}
+
+#banner img{
+    width: 80%;
+    margin-right: 1%;
+}
+
+#bannerText{
+    text-align: justify;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1%;
+}
+
+/*CSS related to the main banner ends*/
+
+/*CSS related to the products list starts*/
+
+#productList{
+    display: flex;
+    width: 100%;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 10px 0 10px 0;
+
+    border: solid black;
+}
+
+.product-card{
+    background-color: #639CD9;;
+    width: 230px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    border: solid black;
+}
+
+.product-card-image{
+    max-width: 100%;
+    max-height: 200px;
+    margin: 10% 10% 0 10%;
+
+    border: solid black;
+}
+
+.product-card-text{
+    width: 100%;
+    background-color: #327ed040; 
+
+    border: solid black;
+}
+
+/*CSS to change the text within the product cards*/
+.product-card h3{
+    margin:10% 10% 1% 10%;
+    color: #ffffff;
+    font-weight: 900;
+}
+
+.product-card hr{
+    margin: 0 10% 0 10%;
+}
+
+.product-card p{
+    margin:1% 10% 10% 10%;
+    color: #ffffff;
+    text-align: justify;
+}
+
+/*CSS related to the products list ends*/
