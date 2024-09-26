@@ -1,0 +1,43 @@
+/*overall site header CSS settings*/
+#siteHeader{
+    display: flex;
+    background-color: antiquewhite;
+    align-items: center;
+    justify-content: space-between;
+    flex-basis: auto;
+}
+
+/*The menu located in the center of the site header*/
+#siteHeaderMenu{
+    display: flex;
+    justify-content: space-around;
+    width: 25%;
+    background-color: rgba(127, 255, 212, 0.462);
+}
+
+/*the container surrounding the actual logo image*/
+#siteHeader #logo{
+    margin-left: 2%;
+    height: 11vh;
+    display: flex;
+    align-items: center;
+}
+
+/*The actual logo image*/
+#siteHeader #logo img{
+    height: 90%;
+}
+
+
+/*The container that has the highlighted "Make a Claim" button and the "Sign In" button*/
+#siteHeaderRight{
+    display: flex;
+    margin-right: 3%;
+}
+
+/*The highlighted make a claim button*/
+#siteHeaderClaim{
+    margin-right: 2%;
+    background-color: aquamarine;
+}
+

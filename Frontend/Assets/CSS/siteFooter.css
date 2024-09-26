@@ -1,0 +1,14 @@
+#footer{
+    display: flex;
+    background-color: bisque;
+    align-items: center;
+    justify-content: space-between;
+    flex-basis: auto;
+    height: 10vh;
+}
+
+#footerMenu{
+    display: flex;
+    justify-content: space-around;
+    width: 25%;
+}
