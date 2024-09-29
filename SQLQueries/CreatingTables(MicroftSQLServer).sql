@@ -128,7 +128,7 @@ CREATE TABLE Inquiry (
 	PolicyId INT,
 	CONSTRAINT inquiry_pk PRIMARY KEY (InqId),
 	CONSTRAINT inquiry_pk_1 FOREIGN KEY (EmpId) REFERENCES Employee(EmpId),
-	CONSTRAINT inquiry_pk_2 FOREIGN KEY (PolicyId) REFERENCES Policy(PolicId),
+	CONSTRAINT inquiry_pk_2 FOREIGN KEY (PolicyId) REFERENCES Policy(PolicyId),
 )
 
 
