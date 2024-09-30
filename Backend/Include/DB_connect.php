@@ -7,7 +7,7 @@ function DB_conn (){
     $host_name = 'localhost';
     $user_name = 'root';
     $password = '';
-    $DB_name = 'iwttest1';
+    $DB_name = 'onelifedb';
 
 
     //Using the variables to create the connection object
