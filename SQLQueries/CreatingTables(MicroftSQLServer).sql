@@ -1,7 +1,7 @@
 /*Creating Policy table*/
 CREATE TABLE Policy (
 	PolicyId INT IDENTITY(1,1),   /*IDENTITY for Microsoft SQL server.  AUTO_INCREMENT for MySQL*/
-	PolicyType VARCHAR (50),
+	PolicyName VARCHAR (50),
 	Coverage INT,
 	Premium INT,
 	CONSTRAINT policy_pk PRIMARY KEY (PolicyId),
@@ -25,9 +25,9 @@ CREATE TABLE Policyholder (
 	Income INT,
 	Street VARCHAR(200),
 	Postal_Code INT,
-	City VARCHAR(20),
+	City VARCHAR(25),
 	Province VARCHAR(25),
-	Country VARCHAR(50),
+	Country VARCHAR(25),
 	Username VARCHAR(20) UNIQUE NOT NULL,
 	Password VARCHAR(20) NOT NULL,
 	CONSTRAINT policyholder_pk PRIMARY KEY (PolicyholderId),
@@ -49,10 +49,11 @@ CREATE TABLE Beneficiary (
 	Name VARCHAR(100),
 	Street VARCHAR(200),
 	Postal_Code INT,
-	City VARCHAR(20),
+	City VARCHAR(25),
 	Province VARCHAR(25),
 	Country VARCHAR(50),
 	CONSTRAINT beneficiary_pk PRIMARY KEY (PolicyholderId, BeneficiaryId),
+	CONSTRAINT beneficiary_fk FOREIGN KEY (PolicyholderId) REFERENCES Policyholder (PolicyholderId)
 )
 
 
@@ -72,12 +73,14 @@ CREATE TABLE Payment (
 	Date DATE,
 	Amount INT NOT NULL,
 	CONSTRAINT payment_pk PRIMARY KEY (PolicyholderId, PayId),
-	CONSTRAINT payment_fk FOREIGN KEY (PolicyholderId) REFERENCES Policyholder (PolicyholderId),
+	CONSTRAINT payment_fk_1 FOREIGN KEY (PolicyholderId) REFERENCES Policyholder (PolicyholderId),
+	CONSTRAINT payment_fk_2 FOREIGN KEY (Amount) REFERENCES Policy (Premium),
 )
 
 CREATE TABLE Policy_Application (
 	ApplicationId INT IDENTITY(1,1),   /*IDENTITY for Microsoft SQL server.  AUTO_INCREMENT for MySQL*/
 	PolicyId INT,
+	EmpId INT,
 	NIC VARCHAR(20) UNIQUE NOT NULL,
 	Name VARCHAR(100),
 	DOB DATE,   /*YYYY.MM.DD*/
@@ -88,7 +91,8 @@ CREATE TABLE Policy_Application (
 	Province VARCHAR(25),
 	Country VARCHAR(50),
 	CONSTRAINT policyApplication_pk PRIMARY KEY (ApplicationId),
-	CONSTRAINT policyApplication_fk FOREIGN KEY(PolicyId) REFERENCES Policy(PolicyId),
+	CONSTRAINT policyApplication_fk_1 FOREIGN KEY(PolicyId) REFERENCES Policy(PolicyId),
+	CONSTRAINT policyApplication_fk_2 FOREIGN KEY (EmpId) REFERENCES Employee(EmpId)
 )
 
 CREATE TABLE Claim (
@@ -96,6 +100,7 @@ CREATE TABLE Claim (
 	PolicyholderId INT,
 	BeneficiaryId INT,
 	PolicyId INT,
+	EmpId INT,
 	NIC VARCHAR(20) UNIQUE NOT NULL,
 	Name VARCHAR(100),
 	Street VARCHAR(200),  /*Should we take address again when claiming or should it load when they insert NIC?*/
@@ -106,13 +111,14 @@ CREATE TABLE Claim (
 	CONSTRAINT claim_pk PRIMARY KEY (ClaimId),
 	CONSTRAINT claim_fk_1 FOREIGN KEY (PolicyholderId, BeneficiaryId) REFERENCES Beneficiary(PolicyholderId, BeneficiaryId),
 	CONSTRAINT claim_fk_2 FOREIGN KEY (PolicyId) REFERENCES Policy(PolicyId),
+	CONSTRAINT claim_fk_3 FOREIGN KEY (EmpId) REFERENCES Employee(EmpId)
 )
 
 CREATE TABLE Employee (
 	EmpId INT IDENTITY(1,1),
 	Role VARCHAR(50),
 	Username VARCHAR(20) UNIQUE NOT NULL,
-	Password VARCHAR(20) UNIQUE NOT NULL,
+	Password VARCHAR(20) NOT NULL,
 	CONSTRAINT employee_pk PRIMARY KEY (EmpId),
 )
 
@@ -127,8 +133,8 @@ CREATE TABLE Inquiry (
 	EmpId INT,
 	PolicyId INT,
 	CONSTRAINT inquiry_pk PRIMARY KEY (InqId),
-	CONSTRAINT inquiry_pk_1 FOREIGN KEY (EmpId) REFERENCES Employee(EmpId),
-	CONSTRAINT inquiry_pk_2 FOREIGN KEY (PolicyId) REFERENCES Policy(PolicyId),
+	CONSTRAINT inquiry_fk_1 FOREIGN KEY (EmpId) REFERENCES Employee(EmpId),
+	CONSTRAINT inquiry_fk_2 FOREIGN KEY (PolicyId) REFERENCES Policy(PolicyId),
 )
 
 
