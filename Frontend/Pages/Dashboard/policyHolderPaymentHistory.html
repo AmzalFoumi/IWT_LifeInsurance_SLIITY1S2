@@ -4,27 +4,29 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="../../Assets/CSS/main.css">
+    <link rel="stylesheet" href="../../Assets/CSS/policyHolder.css">
 </head>
 <body>
 
     <h1>Payments</h1>
 
     <div>
-        Due <input type="number">
-        <button>Pay</button>
+        Due <input type="number" readonly>
+        <button class="button smaller_button" >Pay</button>
     </div>
     <br>
 
 
     <p>Payment History</p> <br>
 
-    <table border="1">
+    <table>
         <tr>
-            <th>Reference</th>
-            <th>Payment Type</th>
-            <th>Date</th>
-            <th>Amount</th>
-            <th>SLIP</th>
+            <th >Reference</th>
+            <th >Payment Type</th>
+            <th >Date</th>
+            <th >Amount</th>
+            <th >Delete</th>
         </tr>
 
         <tr>
@@ -32,7 +34,7 @@
             <td>Deposit</td>
             <td>21/08/2024</td>
             <td>Rs 10,000</td>
-            <td><button>View</button></td>
+            <td><button>Delete</button></td>
         </tr>
     </table>
     
