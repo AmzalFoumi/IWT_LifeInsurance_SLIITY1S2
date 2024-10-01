@@ -27,9 +27,9 @@
         //Encoding the appropriate message to be attached to the success and reply keys to be sent to the frontend JS file
         //Its sent as an associative array in JSON format with keys success and reply
         if($result){
-            echo json_encode(['success' => true, 'reply' => 'Message succesfully sent!']);   
+            echo json_encode(['success' => true, 'message' => 'Message succesfully sent!']);   
         } else {
-            echo json_encode(['success' => false, 'reply' => 'Message sending failed!']);
+            echo json_encode(['success' => false, 'message' => 'Message sending failed!']);
         }
 
         $connection -> close();
