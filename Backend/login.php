@@ -26,7 +26,7 @@
 
             $stmt->fetch();            //Now the values of the first row of the result set are fetched and assigned to the variables bound to the columns previously
             
-            // Verify password
+            // Verify password using password_verify() function
             if (password_verify($password, $hash)) {
                 // Password is correct, start session and store UserID
                 //$_SESSION['user_id'] = $id;
