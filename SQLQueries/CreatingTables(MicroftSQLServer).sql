@@ -74,7 +74,6 @@ CREATE TABLE Payment (
 	Amount INT NOT NULL,
 	CONSTRAINT payment_pk PRIMARY KEY (PolicyholderId, PayId),
 	CONSTRAINT payment_fk_1 FOREIGN KEY (PolicyholderId) REFERENCES Policyholder (PolicyholderId),
-	CONSTRAINT payment_fk_2 FOREIGN KEY (Amount) REFERENCES Policy (Premium),
 )
 
 CREATE TABLE Policy_Application (

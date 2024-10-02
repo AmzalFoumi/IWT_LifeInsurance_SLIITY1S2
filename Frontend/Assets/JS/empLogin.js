@@ -6,7 +6,7 @@ document.getElementById("loginForm").addEventListener("submit", function(event){
     const userName = document.getElementById('user').value;
     const password = document.getElementById('password').value;
 
-    fetch(`${baseURL}/Backend/login.php`,{
+    fetch(`${baseURL}/Backend/empLogin.php`,{
         method: "POST",
         headers: {'Content-Type' : 'application/x-www-form-urlencoded'},
         body: `userName=${userName}&password=${password}`
