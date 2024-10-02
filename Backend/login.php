@@ -11,9 +11,9 @@
 
         $sql = "SELECT policyholderId, password FROM Policyholder WHERE username = ?";        
 
-        $stmt = $connection->prepare($sql);
+        $stmt = $connection->prepare($sql);   //same as mysqli_prepare($connection,$sql);
 
-        $stmt->bind_param("s", $username);
+        $stmt->bind_param("s", $username);    //same as mysqli_stmt_bind_param($stmt,"s",$username);
 
         $stmt->execute();     //Executing the query
 
@@ -26,7 +26,7 @@
 
             $stmt->fetch();            //Now the values of the first row of the result set are fetched and assigned to the variables bound to the columns previously
             
-            // Verify password using password_verify() function
+            // Verify password using password_verify()
             if (password_verify($password, $hash)) {
                 // Password is correct, start session and store UserID
                 //$_SESSION['user_id'] = $id;
