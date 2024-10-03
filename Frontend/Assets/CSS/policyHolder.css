@@ -87,3 +87,10 @@ th, td {
     border:2px solid #ccc;
     padding : 12px;
 }
+
+/* this is the delete button styling, this will be used for beneficary management page */
+.deleteButton {
+    background-color: red;
+    border-radius: 10px;
+    color: white;
+}

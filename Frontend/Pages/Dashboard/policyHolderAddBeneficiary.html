@@ -9,7 +9,7 @@
 </head>
 <body>
 
-    <a href="policyHolderBeneficary.html"><button>Back</button></a>
+    <a href="policyHolderBeneficary.html"><button class="button smaller_button">Back</button></a>
 
     <h2>Adding Beneficiary</h2>
     
@@ -56,10 +56,10 @@
         </div>
     
         <br>
-        
-        <div> <!--Current Address-->
+        <!--Check box to select same as permanent-->
+        <!-- <div> 
             <div>
-                <label >Current Address</label> <input type="checkbox"> Same as Permanent Address<br> <!--Check box to select same as permanent-->
+                <label >Current Address</label> <input type="checkbox"> Same as Permanent Address<br> 
                 <input type="text" placeholder="Address Line 1">
                 <input type="text" placeholder="Address Line 2">
                 <input type="text" placeholder="Address Line 3">
@@ -67,7 +67,7 @@
                 <input type="text" placeholder="Country">
                 <input type="number" placeholder="Postal Code">
             </div>
-        </div>
+        </div> -->
     
         <br>
     
@@ -86,12 +86,15 @@
         <br>
     
         <div>
-            <a href="policyHolderBeneficary.html"><button>Cancel </button></a> <!--cancel button-->
-            <button>Save Changes</button>  <!--Save changes button-->
+            <a href="policyHolderBeneficary.html">
+                <button id="cancelButton" class="button">Cancel </button>
+            </a> <!--cancel button-->
+            <button class="button">Save Changes</button>  <!--Save changes button-->
         </div>
     
     </form>
-    
+        
+    <script src="/Frontend/Assets/JS/policyHolder.js"></script>
 
 </body>
 </html>
