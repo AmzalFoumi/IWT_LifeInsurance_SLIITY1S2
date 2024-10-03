@@ -6,11 +6,39 @@
     <title>Beneficiary</title>
     <link rel="stylesheet" href="../../Assets/CSS/main.css">
     <link rel="stylesheet" href="../../Assets/CSS/policyHolder.css">
+    <link rel="stylesheet" href="../../Assets/CSS/dashboardNavBar.css">
+
 
 </head>
 <body>
+
+    <nav>
+        <div class="sidenav">
+            <div style="text-align: center;">
+                <img src="../../Assets/Images/logo_bird.jpg" alt="" id="logo" >
+            </div>
+            <a href="#">Dashboard</a>
+            <a href="#">Profile</a>
+            <a href="#">Beneficiary</a>
+            <a href="#">Payments</a>
+            <a href="#">Support</a>
+            <a href="#">Settings</a>
+            <a id="logOut" href="#">Log Out</a>
+        </div>
+    </nav>
+   
     
-    <h2>Beneficiary Management</h2>
+    <div class="header">
+        <h1 class="heading">One Life Insurance</h1>
+        <div class="padding">
+            <button class="navButton">Claim</button>
+            <span class="username">Username</span>
+        </div>
+
+    </div>
+
+    <div class="main">
+        <h2>Beneficiary Management</h2>
 
     <div>
         <a href="policyHolderAddBeneficiary.html"><button class="button smaller_button"> Add</button></a> Beneficiary
@@ -109,5 +137,8 @@
                 console.error('Error fetching data:', error);
             });
     </script>
+    </div>
+    
+    
 </body>
 </html>

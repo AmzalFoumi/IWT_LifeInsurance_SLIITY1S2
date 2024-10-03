@@ -6,10 +6,38 @@
     <title>Add Beneficiary</title>
     <link rel="stylesheet" href="../../Assets/CSS/main.css">
     <link rel="stylesheet" href="../../Assets/CSS/policyHolder.css">
+    <link rel="stylesheet" href="../../Assets/CSS/dashboardNavBar.css">
+
 </head>
 <body>
 
-    <a href="policyHolderBeneficary.html"><button class="button smaller_button">Back</button></a>
+    <nav>
+        <div class="sidenav">
+            <div style="text-align: center;">
+                <img src="../../Assets/Images/logo_bird.jpg" alt="" id="logo" >
+            </div>
+            <a href="#">Dashboard</a>
+            <a href="#">Profile</a>
+            <a href="#">Beneficiary</a>
+            <a href="#">Payments</a>
+            <a href="#">Support</a>
+            <a href="#">Settings</a>
+            <a id="logOut" href="#">Log Out</a>
+        </div>
+    </nav>
+   
+    
+    <div class="header">
+        <h1 class="heading">One Life Insurance</h1>
+        <div class="padding">
+            <button class="navButton">Claim</button>
+            <span class="username">Username</span>
+        </div>
+
+    </div>
+
+    <div class="main">
+        <a href="policyHolderBeneficary.html"><button class="button smaller_button">Back</button></a>
 
     <h2>Adding Beneficiary</h2>
     
@@ -95,6 +123,9 @@
     </form>
         
     <script src="/Frontend/Assets/JS/policyHolder.js"></script>
+    </div>
+
+    
 
 </body>
 </html>

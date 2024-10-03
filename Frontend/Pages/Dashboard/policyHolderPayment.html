@@ -6,33 +6,66 @@
     <title>Payment</title>
     <link rel="stylesheet" href="../../Assets/CSS/main.css">
     <link rel="stylesheet" href="../../Assets/CSS/policyHolder.css">
+    <link rel="stylesheet" href="../../Assets/CSS/dashboardNavBar.css">
+
 </head>
 <body>
-    
-    <h1>Payments</h1>
 
-    <form action="">
-        <div>
-           <input type="number"> Due 
+    <nav>
+        <div class="sidenav">
+            <div style="text-align: center;">
+                <img src="../../Assets/Images/logo_bird.jpg" alt="" id="logo" >
+            </div>
+            <a href="#">Dashboard</a>
+            <a href="#">Profile</a>
+            <a href="#">Beneficiary</a>
+            <a href="#">Payments</a>
+            <a href="#">Support</a>
+            <a href="#">Settings</a>
+            <a id="logOut" href="#">Log Out</a>
         </div>
-        <br> <br>
+    </nav>
+   
     
-        <div>
-            <input type="text" placeholder="Reference"> <br>
-            <input type="date" > <br>
-            <input type="number" placeholder="Amount"> <br>
-            <!-- Upload Receipt <input type="file"> -->
+    <div class="header">
+        <h1 class="heading">One Life Insurance</h1>
+        <div class="padding">
+            <button class="navButton">Claim</button>
+            <span class="username">Username</span>
         </div>
-    
-        <div>
-            <a href="/Frontend/Pages/Dashboard/policyHolderPaymentHistory.html"><button class="button"> <!--cancel button-->
-                Cancel
-            </button></a>
+
+    </div>
+
+    <!-- this is where the main content is located -->
+    <div class="main"> 
+
+        <h1>Payments</h1>
+
+        <form action="">
+            <div>
+               <input type="number"> Due 
+            </div>
+            <br> <br>
         
-            <button class="button"> <!--Save changes button-->
-               Pay
-            </button>
-        </div>
-    </form>
+            <div>
+                <input type="text" placeholder="Reference"> <br>
+                <input type="date" > <br>
+                <input type="number" placeholder="Amount"> <br>
+                <!-- Upload Receipt <input type="file"> -->
+            </div>
+        
+            <div>
+                <a href="/Frontend/Pages/Dashboard/policyHolderPaymentHistory.html"><button class="button"> <!--cancel button-->
+                    Cancel
+                </button></a>
+            
+                <button class="button"> <!--Save changes button-->
+                   Pay
+                </button>
+            </div>
+        </form>
+    </div>
+    
+    
 </body>
 </html>
