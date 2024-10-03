@@ -192,3 +192,18 @@ function submitForm()
     form.submit();
     
 }
+
+
+//policyHolderAddBeneficiary.html  confims whether to cancel, if cancel button is clicked
+// const cancel = document.getElementById('cancelButton');
+
+// cancel.addEventListener('click', () => {
+
+//     if (confirm('Are you sure you want to cancel ?')) {
+//         console.log (' Cancellation confirmed');
+
+//     } else {
+//         console.log ('Cancellation cancelled');
+//     }
+
+// });

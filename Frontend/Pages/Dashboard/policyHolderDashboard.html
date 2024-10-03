@@ -32,38 +32,64 @@
                 
                 <div style="display: flex;">
                     <div>
-                        <label>Insurance Package Name</label><br>
-                        <input type="type" placeholder="Package name" readonly>
+                        <label>Policy Name</label><br>
+                        <input id="policyName" type="type" placeholder="Policy Name" readonly>
                     </div>
                 
                     <div>
-                        <label>Amount Due</label><br>
-                        <input type="type" placeholder="Amount due" readonly>
+                        <label>Policy ID</label><br>
+                        <input id="policyId" type="type" placeholder="Policy ID" readonly>
                     </div>
                 </div>
             
                 <div style="display: flex;">
                     <div>
-                        <label>Claim Status</label><br>
-                        <input type="type" placeholder="Claim status" readonly>
+                        <label>Coverage</label><br>
+                        <input id="coverage" type="type" placeholder="Coverage" readonly>
                     </div>
                 
                     <div>
-                        <label>Policy Coverage</label><br>
-                        <input type="type" placeholder="Policy coverage" readonly>
+                        <label>Premium</label><br>
+                        <input id="premium" type="type" placeholder="Premium" readonly>
                     </div>
                 </div>
             
-                <div style="display: flex;">
+                <!-- <div style="display: flex;">
                     <div>
                         <label>Policy Name</label><br>
                         <input type="type" placeholder="Policy name" readonly>
                     </div>
-                </div>
+                </div> -->
                 
     
             </div>
         </form>
     </div>
+    <script>
+        fetch('policyType.php')
+            .then(response => response.json())
+            .then(data => {
+                //this get the reference input fields given abouve using id's
+                const policyName = document.getElementById('policyName');
+                const policyId = document.getElementById('policyId');
+                const coverage = document.getElementById('coverage');
+                const premium = document.getElementById('premium');
+
+                //this is use to access the first element of the data array
+                const item = data[0];
+
+                //if the item has the data, then it will go inside the loop
+                if(item) {
+                    policyName.value = item.PolicyName;
+                    policyId.value = item.PolicyId;
+                    coverage.value = item.Coverage;
+                    premium.value = item.Premium;
+                } else {
+                    alert("Data Not Found");
+                }
+
+
+            }) 
+    </script>
 </body>
 </html>
