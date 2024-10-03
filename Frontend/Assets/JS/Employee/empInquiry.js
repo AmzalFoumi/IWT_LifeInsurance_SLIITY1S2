@@ -25,8 +25,11 @@ function loadInqTable() {
                 window.location.href = `${baseURL}/Frontend/Pages/Employee/empInquiryDetails.html?inqId=${inquiries.InqId}`;
             });
 
-            tableBody.appendChild(row);
+            
             //tableBody.innerHTML += row; // wrongdisplays as [HTMLTableRowElement]
+            
+            tableBody.appendChild(row);  //This works and displays the actual content
+            
             /*let row = `<tr>
                 <td>${inquiries.InqId}</td>
                 <td>${inquiries.Name}</td>
