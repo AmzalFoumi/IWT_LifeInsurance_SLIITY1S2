@@ -22,13 +22,13 @@
 
         if ($stmt->num_rows > 0) {
 
-            $stmt->bind_result($id, $hash, $empName);          //The columns for policyholderId and password are bound to the variables within the brackets
+            $stmt->bind_result($id, $hash, $empName);          //The columns for policyholderId, password and employee name are bound to the variables within the brackets
 
             $stmt->fetch();            //Now the values of the first row of the result set are fetched and assigned to the variables bound to the columns previously
             
             // Verify password using password_verify()
             if (password_verify($password, $hash)) {
-                // Password is correct, start session and store UserID
+                // Password is correct, start session and store UserID and Employee Name
                 $_SESSION['user_id'] = $id;
                 $_SESSION['user_name'] = $empName;
                 
