@@ -4,14 +4,15 @@
     width: 100%;
 }
 
-#leftNavbard{
-    max-width: 10%;
+#leftNavbar{
+    width: 20%;
     height: 100vh;
 }
 
 #right{
-    width:90%;
+    width:80%;
     display: flex;
+    flex-direction: column;
 }
 
 #right #topNavbar{
@@ -21,6 +22,6 @@
 }
 
 #right #content{
-    min-height: 90%;
+    height: 90%;
     width: 100%;
 }
