@@ -16,10 +16,10 @@
             <div style="text-align: center;">
                 <img src="../../Assets/Images/logo_bird.jpg" alt="" id="logo" >
             </div>
-            <a href="#">Dashboard</a>
-            <a href="#">Profile</a>
-            <a href="#">Beneficiary</a>
-            <a href="#">Payments</a>
+            <a href="http://localhost/IWTProject/IWT_LifeInsurance_SLIITY1S2/Frontend/Pages/Dashboard/policyHolderDashboard.html">Dashboard</a>
+            <a href="http://localhost/IWTProject/IWT_LifeInsurance_SLIITY1S2/Frontend/Pages/Dashboard/policyHolderProfile.html">Profile</a>
+            <a href="http://localhost/IWTProject/IWT_LifeInsurance_SLIITY1S2/Frontend/Pages/Dashboard/policyHolderBeneficary.html">Beneficiary</a>
+            <a href="http://localhost/IWTProject/IWT_LifeInsurance_SLIITY1S2/Frontend/Pages/Dashboard/policyHolderPaymentHistory.html">Payments</a>
             <a href="#">Support</a>
             <a href="#">Settings</a>
             <a id="logOut" href="#">Log Out</a>
@@ -41,7 +41,7 @@
         <div> <!--Profile Picture-->
             <label id="pageName">Profile</label>
             <div>
-                <img src="/Frontend/Assets/Images/profilePicture.png" alt="" style="border: 1px; width: 150px; height: 150px;">
+                <img src="http://localhost/IWTProject/IWT_LifeInsurance_SLIITY1S2/Frontend/Assets/Images/profilePicture.png" alt="" style="border: 1px; width: 150px; height: 150px;">
             </div>
         </div>
     
@@ -52,21 +52,33 @@
             <div> 
                 <div ><!--First Name-->
                     <label >Name</label><br>
-                    <input id="text" type="text" name="name" readonly>
+                    <input id="name" type="text" name="name" readonly>
+                    <span id="nameError" class="error-message"></span>
+                </div>
+
+                <div ><!-- User Name-->
+                    <label >Username</label><br>
+                    <input id="username" type="text" name="name" readonly>
+                    <span id="nameError" class="error-message"></span>
+                </div>
+
+                <div ><!-- User Name-->
+                    <label >password</label><br>
+                    <input id="password" type="text" name="password" readonly>
                     <span id="nameError" class="error-message"></span>
                 </div>
     
             
                 <div> <!--Date of Birth-->
                     <label >Date Of Birth</label><br>
-                    <input id="DOB" type="date" name="dob" readonly>
+                    <input id="dob" type="date" name="dob" readonly>
                     <span id="dobError" class="error-message"></span>
                 </div>
     
     
                 <div> <!--NIC-->
                     <label >NIC</label><br>
-                    <input id="NIC" type="text" name="nic" readonly>
+                    <input id="nic" type="text" name="nic" readonly>
                     <span id="nicError" class="error-message"></span>
                 </div>
             </div>
@@ -74,11 +86,11 @@
             <div> <!--Permanent address-->
                 <div>
                     <label >Permanent Address</label><br>
-                    <input id="text" placeholder="Street" name="street" readonly>
+                    <input id="street" placeholder="Street" name="street" readonly>
                     <!-- <input type="text" placeholder="Address Line 2" readonly> -->
-                    <input id="text" type="text" placeholder="City" name="city" readonly>
-                    <input id="text" type="text" placeholder="Provice" name="province" readonly>
-                    <input id="text" type="text" placeholder="Country" name="country" readonly>
+                    <input id="city" type="text" placeholder="City" name="city" readonly>
+                    <input id="province" type="text" placeholder="Provice" name="province" readonly>
+                    <input id="country" type="text" placeholder="Country" name="country" readonly>
                     <input id="postalCode" type="number" placeholder="Postal Code(number)" name="postalCode" readonly>
                     <span id="postalCodeError" class="error-message"></span>
                     
@@ -94,12 +106,13 @@
                     <span id="phoneError" class="error-message"></span>
                 </div>
             
-                <div> <!--Email address-->
+                <!-- <div> 
                     <label >Email</label><br>
                     <input type="email" placeholder="oneLife@gmail.com" id="email" name="email" readonly>
                     <span id="emailError" class="error-message"></span>
                     
-                </div>
+                </div> -->
+
             </div>
             <!-- <input id="savebtn" type="submit" Value="Save Changes" class="button" onclick="submitForm()"> -->
         </form>
@@ -107,10 +120,51 @@
             <button id="editbtn" class="button">Edit Profile</button>
             <button id="cancelbtn" class="hidden" class="button" >Cancel</button>
             <button  id="savebtn" class="hidden" class="button">Save Changes</button>
-            
-        
-        <script src="/Frontend/Assets/JS/policyHolder.js"></script>
+
+
     
+        <script>
+            fetch('profile.php')
+                .then(response => response.json())
+                .then(data => {
+                    //this get the reference input fields given abouve using id's
+                    const name = document.getElementById('name');
+                    const username = document.getElementById('username');
+                    const dob = document.getElementById('dob');
+                    const nic = document.getElementById('nic');
+                    const street = document.getElementById('street');
+                    const city = document.getElementById('city');
+                    const province = document.getElementById('province');
+                    const country = document.getElementById('country');
+                    const postalCode = document.getElementById('postalCode');
+                    const password = document.getElementById('password');
+                    
+    
+                    //this is use to access the first element of the data array
+                    const item = data[0];
+    
+                    //if the item has the data, then it will go inside the loop
+                    if(item) {
+                        name.value = item.Name;
+                        username.value = item.Username;
+                        dob.value = item.DOB;
+                        nic.value = item.NIC;
+                        street.value = item.Street;
+                        city.value = item.City;
+                        province.value = item.Province;
+                        country.value = item.Country;
+                        postalCode.value = item.Postal_Code;
+                        password.value = item.Password;
+
+                    } else {
+                        alert("Data Not Found");
+                    }
+    
+    
+                }) 
+        </script>
+
+<script src="http://localhost/IWTProject/IWT_LifeInsurance_SLIITY1S2/Frontend/Assets/JS/policyHolder.js"></script>
 
     </div>
 

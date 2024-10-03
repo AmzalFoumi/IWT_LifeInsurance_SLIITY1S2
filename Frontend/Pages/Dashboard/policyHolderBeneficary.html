@@ -17,10 +17,10 @@
             <div style="text-align: center;">
                 <img src="../../Assets/Images/logo_bird.jpg" alt="" id="logo" >
             </div>
-            <a href="#">Dashboard</a>
-            <a href="#">Profile</a>
-            <a href="#">Beneficiary</a>
-            <a href="#">Payments</a>
+            <a href="http://localhost/IWTProject/IWT_LifeInsurance_SLIITY1S2/Frontend/Pages/Dashboard/policyHolderDashboard.html">Dashboard</a>
+            <a href="http://localhost/IWTProject/IWT_LifeInsurance_SLIITY1S2/Frontend/Pages/Dashboard/policyHolderProfile.html">Profile</a>
+            <a href="http://localhost/IWTProject/IWT_LifeInsurance_SLIITY1S2/Frontend/Pages/Dashboard/policyHolderBeneficary.html">Beneficiary</a>
+            <a href="http://localhost/IWTProject/IWT_LifeInsurance_SLIITY1S2/Frontend/Pages/Dashboard/policyHolderPaymentHistory.html">Payments</a>
             <a href="#">Support</a>
             <a href="#">Settings</a>
             <a id="logOut" href="#">Log Out</a>
@@ -41,7 +41,7 @@
         <h2>Beneficiary Management</h2>
 
     <div>
-        <a href="policyHolderAddBeneficiary.html"><button class="button smaller_button"> Add</button></a> Beneficiary
+        <a href="http://localhost/IWTProject/IWT_LifeInsurance_SLIITY1S2/Frontend/Pages/Dashboard/policyHolderAddBeneficiary.html"><button class="button smaller_button"> Add</button></a> Beneficiary
 
     </div>
 
@@ -114,18 +114,8 @@
                     row.appendChild(phoneCodeCell);
 
                 
-                    //this will add delete button
-                    const deleteButtonCell = document.createElement('td');
-                    const deleteButton = document.createElement('button');
-                    deleteButton.textContent = "Delete";
-
-
-                    //this will add class to the deletebutton to style 
-                    deleteButton.classList.add("deleteButton");
-
-                    deleteButtonCell.appendChild(deleteButtonCell);
-                    row.appendChild(deleteButtonCell); //this will append the deletebutton cell to row
-
+                    
+                    // this code for delete button is below, have to fix it to wotk properly
                     
 
 
@@ -138,6 +128,19 @@
             });
     </script>
     </div>
+
+
+    <!-- //this will add delete button
+                    const deleteButtonCell = document.createElement('td');
+                    const deleteButton = document.createElement('button');
+                    deleteButton.textContent = "Delete";
+
+
+                    //this will add class to the deletebutton to style 
+                    deleteButton.classList.add("deleteButton");
+
+                    deleteButtonCell.appendChild(deleteButtonCell);
+                    row.appendChild(deleteButtonCell); //this will append the deletebutton cell to row -->
     
     
 </body>
