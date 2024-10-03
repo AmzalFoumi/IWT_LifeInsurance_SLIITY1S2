@@ -29,8 +29,9 @@
   }
 
   #logOut {
-    position: absolute;
+    position: relative;
     bottom: 0;
+    margin-top: 80%;
     padding: 6px 40px 30px 40px;
   }
 
