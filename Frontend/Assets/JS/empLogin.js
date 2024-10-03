@@ -20,7 +20,7 @@ document.getElementById("loginForm").addEventListener("submit", function(event){
             responseDisplay.innerText = data.message; 
             
             setTimeout(function () {
-                    window.open(`${baseURL}/Frontend/Pages/EmpDashboard/empDashboard.html`, "_self")
+                    window.open(`${baseURL}/Frontend/Pages/Employee/empDashboard.html`, "_self")
             },300);
             
         } else {
