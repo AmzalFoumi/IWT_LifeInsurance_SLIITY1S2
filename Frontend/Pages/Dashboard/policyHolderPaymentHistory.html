@@ -4,38 +4,79 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="../../Assets/CSS/main.css">
+    <link rel="stylesheet" href="../../Assets/CSS/policyHolder.css">
 </head>
 <body>
 
     <h1>Payments</h1>
 
     <div>
-        Due <input type="number">
-        <button>Pay</button>
+        Due <input type="number" readonly>
+        <a href="/Frontend/Pages/Dashboard/policyHolderPayment.html"><button class="button smaller_button" >Pay</button></a>
     </div>
     <br>
 
 
     <p>Payment History</p> <br>
 
-    <table border="1">
+    <table>
         <tr>
-            <th>Reference</th>
-            <th>Payment Type</th>
-            <th>Date</th>
-            <th>Amount</th>
-            <th>SLIP</th>
+            <th >Pay ID</th>
+            <th >Reference</th>
+            <th >Date</th>
+            <th >Amount</th>
+            <th >Delete</th>
         </tr>
 
-        <tr>
-            <td>receipt 111</td>
-            <td>Deposit</td>
-            <td>21/08/2024</td>
-            <td>Rs 10,000</td>
-            <td><button>View</button></td>
-        </tr>
+        <tbody id="data-row">
+
+        </tbody>
     </table>
     
+    <script>
+        fetch('paymentHistory.php')
+            .then(response => response.json())
+            .then(data => {
+                // this will get the data-row id
+                const container = document.getElementById('data-row');
+
+                data.forEach(item => {
+                    //This will create new table row
+                    const row = document.createElement('tr');
+
+                    // this will create data cells for each item property
+
+                    const payIdCell = document.createElement('td');
+                    payIdCell.textContent = item.PayId;
+                    row.appendChild(payIdCell);
+                    
+                    const referenceCell = document.createElement('td');
+                    referenceCell.textContent = item.Reference;
+                    row.appendChild(referenceCell);
+
+                    const dateCell = document.createElement('td');
+                    dateCell.textContent = item.Date;
+                    row.appendChild(dateCell);
+
+                    const amountCell = document.createElement('td');
+                    amountCell.textContent = item.Amount;
+                    row.appendChild(amountCell);
+
+                    const provinceCell = document.createElement('td');
+                    provinceCell.textContent = item.Province;
+                    row.appendChild(provinceCell);
+
+                    
+
+                    // Append the row to the data-row
+                    container.appendChild(row);
+                });
+            })
+            .catch(error => {
+                console.error('Error fetching data:', error);
+            });
+    </script>
 
 </body>
 </html>

@@ -4,81 +4,83 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Profile</title>
-    <link rel="stylesheet" href="styles/style.css">
-</head>
+    <link rel="stylesheet" href="../../Assets/CSS/main.css">
+    <link rel="stylesheet" href="../../Assets/CSS/policyHolder.css">
+    
 <body>
 
     <div> <!--Profile Picture-->
-        <label>Profile</label>
+        <label id="pageName">Profile</label>
         <div>
-            <img src="" alt="" style="border: 1px; width: 150px; height: 150px;">
+            <img src="/Frontend/Assets/Images/profilePicture.png" alt="" style="border: 1px; width: 150px; height: 150px;">
         </div>
     </div>
 
-    <form action="">
-        <div> <!--First Name-->
-            <div>
-                <label >First Name</label><br>
-                <input type="text" readonly>
+    <form id="editForm" action="" method="post">
+
+
+        <div> 
+            <div ><!--First Name-->
+                <label >Name</label><br>
+                <input id="text" type="text" name="name" readonly>
+                <span id="nameError" class="error-message"></span>
             </div>
-        
-            <div> <!--Last Name-->
-                <label >Last Name</label><br>
-                <input type="text" readonly>
-            </div>
+
         
             <div> <!--Date of Birth-->
                 <label >Date Of Birth</label><br>
-                <input type="number" readonly>
+                <input id="DOB" type="date" name="dob" readonly>
+                <span id="dobError" class="error-message"></span>
             </div>
+
+
             <div> <!--NIC-->
                 <label >NIC</label><br>
-                <input type="text" readonly>
+                <input id="NIC" type="text" name="nic" readonly>
+                <span id="nicError" class="error-message"></span>
             </div>
         </div>
     
         <div> <!--Permanent address-->
             <div>
                 <label >Permanent Address</label><br>
-                <input type="text" placeholder="Address Line 1" readonly>
-                <input type="text" placeholder="Address Line 2" readonly>
-                <input type="text" placeholder="Address Line 3" readonly>
-                <input type="text" placeholder="City" readonly>
-                <input type="text" placeholder="Country" readonly>
-                <input type="number" placeholder="Postal Code" readonly>
+                <input id="text" placeholder="Street" name="street" readonly>
+                <!-- <input type="text" placeholder="Address Line 2" readonly> -->
+                <input id="text" type="text" placeholder="City" name="city" readonly>
+                <input id="text" type="text" placeholder="Provice" name="province" readonly>
+                <input id="text" type="text" placeholder="Country" name="country" readonly>
+                <input id="postalCode" type="number" placeholder="Postal Code(number)" name="postalCode" readonly>
+                <span id="postalCodeError" class="error-message"></span>
+                
             </div>
         </div>
-        
-        <div> <!--Current Address-->
-            <div>
-                <label >Current Address</label><br>
-                <input type="text" placeholder="Address Line 1" readonly>
-                <input type="text" placeholder="Address Line 2" readonly>
-                <input type="text" placeholder="Address Line 3" readonly>
-                <input type="text" placeholder="City" readonly>
-                <input type="text" placeholder="Country" readonly>
-                <input type="number" placeholder="Postal Code" readonly>
-            </div>
-        </div>
+
+        <br>
     
         <div> <!--Phone number-->
             <div>
                 <label >Phone</label><br>
-                <input type="tel" placeholder="(076) 757-1212" readonly>
+                <input id="phone" type="tel" placeholder="(076) 757-1212" name="phone" readonly>
+                <span id="phoneError" class="error-message"></span>
             </div>
         
             <div> <!--Email address-->
                 <label >Email</label><br>
-                <input type="email" placeholder="oneLife@gmail.com" readonly>
+                <input type="email" placeholder="oneLife@gmail.com" id="email" name="email" readonly>
+                <span id="emailError" class="error-message"></span>
+                
             </div>
         </div>
-    
-        <button> <!--Edit profile button-->
-            Edit Profile
-        </button>
+        <!-- <input id="savebtn" type="submit" Value="Save Changes" class="button" onclick="submitForm()"> -->
     </form>
 
+        <button id="editbtn" class="button">Edit Profile</button>
+        <button id="cancelbtn" class="hidden" class="button" >Cancel</button>
+        <button  id="savebtn" class="hidden" class="button">Save Changes</button>
+        
     
+    <script src="/Applications/XAMPP/xamppfiles/htdocs/IWT_LifeInsurance_SLIITY1S2/Frontend/Assets/JS/policyHolder.js"></script>
 
+   
 </body>
 </html>

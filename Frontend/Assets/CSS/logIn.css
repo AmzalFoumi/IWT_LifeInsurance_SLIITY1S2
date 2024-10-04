@@ -1,0 +1,47 @@
+
+*{
+    padding :0;
+    margin: 0;
+    font-family:sans-serif;
+}
+
+/**/
+body{
+    background: #f0f0f0;;
+    background-size: cover;
+}
+
+/**/
+#loginForm{
+    width: 350px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    position: absolute;
+
+}
+
+/**/
+#loginForm h1{
+    font-size: 40px;
+    text-align: center;
+    text-transform: uppercase;
+    margin: 40px 0;
+}
+
+/**/
+#loginForm label{
+    font-size: 16px;
+    margin: 15px 0;
+
+}
+
+/**/
+#loginForm input{
+    font-size: 16px;
+    width: 100%;
+    padding: 15px 10px;
+    border: 0;
+    outline: none;
+    border-radius: 5px;
+}

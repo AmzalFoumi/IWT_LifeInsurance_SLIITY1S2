@@ -3,7 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Payment</title>
+    <link rel="stylesheet" href="../../Assets/CSS/main.css">
+    <link rel="stylesheet" href="../../Assets/CSS/policyHolder.css">
 </head>
 <body>
     
@@ -11,22 +13,23 @@
 
     <form action="">
         <div>
-            Due <input type="number">
+           <input type="number"> Due 
         </div>
         <br> <br>
     
         <div>
             <input type="text" placeholder="Reference"> <br>
+            <input type="date" > <br>
             <input type="number" placeholder="Amount"> <br>
-            Upload Receipt <input type="file">
+            <!-- Upload Receipt <input type="file"> -->
         </div>
     
         <div>
-            <button> <!--cancel button-->
+            <a href="/Frontend/Pages/Dashboard/policyHolderPaymentHistory.html"><button class="button"> <!--cancel button-->
                 Cancel
-            </button>
+            </button></a>
         
-            <button> <!--Save changes button-->
+            <button class="button"> <!--Save changes button-->
                Pay
             </button>
         </div>
