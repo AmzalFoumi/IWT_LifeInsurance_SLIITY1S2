@@ -1,6 +1,6 @@
-/*Creating Policy table*/
+
 CREATE TABLE Policy (
-	PolicyId INT IDENTITY(1,1),   /*IDENTITY for Microsoft SQL server.  AUTO_INCREMENT for MySQL*/
+	PolicyId INT IDENTITY(1,1),   
 	PolicyName VARCHAR (50),
 	Coverage INT,
 	Premium INT,
@@ -15,9 +15,9 @@ CREATE TABLE Policy_Benefits(
 	CONSTRAINT policyBenefits_fk FOREIGN KEY(PolicyId) REFERENCES Policy(PolicyId),
 )
 
-/*Creating Policyholder table*/
+
 CREATE TABLE Policyholder (
-	PolicyholderId INT IDENTITY(1,1),   /*IDENTITY for Microsoft SQL server.  AUTO_INCREMENT for MySQL*/
+	PolicyholderId INT IDENTITY(1,1),  
 	PolicyId INT,
 	NIC VARCHAR(20) UNIQUE NOT NULL,
 	Name VARCHAR(100),
@@ -34,6 +34,7 @@ CREATE TABLE Policyholder (
 	CONSTRAINT policyholder_fk FOREIGN KEY(PolicyId) REFERENCES Policy(PolicyId),
 )
 
+/*For mulitvalued attribute phone number*/
 CREATE TABLE Policyholder_phone (
 	PolicyholderId INT,
 	PhoneNumber INT,
@@ -56,7 +57,7 @@ CREATE TABLE Beneficiary (
 	CONSTRAINT beneficiary_fk FOREIGN KEY (PolicyholderId) REFERENCES Policyholder (PolicyholderId)
 )
 
-
+/*For Multivalued attribute phone number*/
 CREATE TABLE Benefeciary_phone (
 	PolicyholderId INT,
 	BeneficiaryId INT,
@@ -74,6 +75,14 @@ CREATE TABLE Payment (
 	Amount INT NOT NULL,
 	CONSTRAINT payment_pk PRIMARY KEY (PolicyholderId, PayId),
 	CONSTRAINT payment_fk_1 FOREIGN KEY (PolicyholderId) REFERENCES Policyholder (PolicyholderId),
+)
+
+CREATE TABLE Employee (
+	EmpId INT IDENTITY(1,1),
+	Role VARCHAR(50),
+	Username VARCHAR(20) UNIQUE NOT NULL,
+	Password VARCHAR(20) NOT NULL,
+	CONSTRAINT employee_pk PRIMARY KEY (EmpId),
 )
 
 CREATE TABLE Policy_Application (
@@ -113,13 +122,6 @@ CREATE TABLE Claim (
 	CONSTRAINT claim_fk_3 FOREIGN KEY (EmpId) REFERENCES Employee(EmpId)
 )
 
-CREATE TABLE Employee (
-	EmpId INT IDENTITY(1,1),
-	Role VARCHAR(50),
-	Username VARCHAR(20) UNIQUE NOT NULL,
-	Password VARCHAR(20) NOT NULL,
-	CONSTRAINT employee_pk PRIMARY KEY (EmpId),
-)
 
 CREATE TABLE Inquiry (
 	InqId INT IDENTITY(1,1),

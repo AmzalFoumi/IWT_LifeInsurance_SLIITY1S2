@@ -1,5 +1,4 @@
 <?php
-    include_once "./include/functions.php";
     require_once "./include/DB_connect.php";
 ?>
 
