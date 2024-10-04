@@ -5,109 +5,112 @@
         <title>Registration Form</title>
         <meta charset="UTF-8">
         <link rel="stylesheet" href="../Assets/CSS/main.css">
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                background-color : white;
+                margin: 0;
+                padding: 20px;
+                align-items: center;
+                justify-content: center;
+            }
 
+            h1 {
+                text-align: center;
+            }
+
+            form {
+                max-width: 600px;
+                margin: 0 auto;
+                background: #fff;
+                padding: 20px;
+                border-radius: 8px;
+                box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            }
+
+            label {
+                display: block;
+                margin-bottom: 8px;
+                font-weight: bold;
+            }
+
+            input[type="text"]{
+                width: 100%;
+                padding: 8px;
+                margin-bottom: 20px;
+                border: 1px solid #ccc;
+                border-radius: 4px;
+            }
+
+            input[type="number"]{
+                width: 100%;
+                padding: 8px;
+                margin-bottom: 20px;
+                border: 1px solid #ccc;
+                border-radius: 4px;
+            }
+            input[type="date"] {
+                width: 100%;
+                padding: 8px;
+                margin-bottom: 20px;
+                border: 1px solid #ccc;
+                border-radius: 4px;
+            }
+
+            button {
+                display: block;
+                width: 100%;
+                background-color: #3128d8;
+                color: white;
+                padding: 10px;
+                border: none;
+                border-radius: 5px;
+                cursor: pointer;
+            }
+
+            button:hover {
+                background-color: #3034ba;
+            }
+        </style>
     </head>
     <body>
         <center>
             <h2>Registration Form</h2>
         </center>
         <div class ="container"> 
-            <form action ="../../Backend/policy-application.php" method="post"></form>
-                <div id="policy-form-left">
-                    <h3 id="header">Personal Information</h3>
-            
-                    <label for="Full Name"> Full Name:</label>
-                    <input type="text" name="fullname" placeholder="Full Name" required><br><br/>
-                        
-                    <label for="Name With Initials"> Name with Initials:</label>
-                    <input type="text" name="initials" placeholder="Name With Initials" required><br><br/>
-                    
-                    <p>Birthday:</p>
-                    <input type="date" name="day" required><br><br/>
-
-                    <p>Gender:</p>
-                    <input type="radio" value="Male" name="gender">Male
-                    <input type="radio" value="Female" name="gender" checked>Female<br><br/>
-                        
-                    <p>Phone Number:</p>
-                    <input type="phone" name="mobile" placeholder="0777777777" pattern="[0-9]{10}" required><br><br/>
-                    
-                    Address Line 1:
-                    <textarea name="address" rows="1" cols="30" required></textarea><br/><br/>
-
-                    Address Line 2:
-                    <textarea name="address" rows="1" cols="30" required></textarea><br/><br/>
-
-                    District / City:
-                    <input type="text" name="district" placeholder="District" required><br><br/>
-
-                    Country:
-                    <input type="text" id= "country" name="country"  placeholder="Sri Lanka" required><br><br/>
-
-                    <label for="imageupload">Upload Your Photo:</label>
-                    <input type="file" id ="imageUpload" name="imageUpload" accept="image" required><br><br/>
-                        
-                    <label for="nic">Upload Valid NIC:</label>
-                    <input type="file" id ="nic" name="nic" accept="image" required>       
-                </div>
-
-                <div id="policy-form-right">
-
-                    <h3 id="header">Employment Information</h3>
-
-            
-                    Occupation:
-                    <input type="text" id= "occupation" name="Occupation" ><br><br/>
-
-                    Working Address:
-                    <input type="text" name="workingAddress" placeholder="Address" required><br><br/>
-
-                    E-mail Address (work):
-                    <input type="email" name="email" placeholder="abc@gmail.com" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}" required><br/><br/>
-
-                    Payment Zip Image:
-                    <input type="file" id ="zip" name="zip" accept="image" required>
-
-
-
-                    <h3 id="header">Insurance Coverage Details</h3>
-
-                    Type of Insurance:
-
-                    <label for="option1">Term Life</label>
-                    <input type="radio" id="option1" name="option" value="1">
-                    <label for="option2">Whole Life</label>
-                    <input type="radio" id="option2" name="option" value="2">
-                    <label for="option3">Universal Life</label>
-                    <input type="radio" id="option3" name="option" value="3" checked><br><br/>
-
-
-                    <label for="amunt">Coverage Amount:</label>
-                    <input type="number" id="amount" step="0.01" placeholder="0.00" required><br><br/>
-
-                    Premium Payment:
-                    <label for="option1">Monthly</label>
-                    <input type="radio" id="option1" name="option" value="1">
-                    <label for="option2">Quarterly</label>
-                    <input type="radio" id="option2" name="option" value="2">
-                    <label for="option3">Annually</label>
-                    <input type="radio" id="option3" name="option" value="3" checked><br><br/>
-
-
-                    Additional Riders (ext):
-                    <textarea name="Additional" rows="1" cols="30" ></textarea><br/><br/>
-
-                    Declaration
-                    <input type="radio" value="agree" name="agree">
-                    <p>I concur with the information provided above.</p>
-                    <br/><br/>
-
-                        
-                    <input type="submit" value="Submit" id="submitBtn" disabled>
-                    <input type="reset" value="reset" id="resetBtn" disabled>
-                       
-                </div>
+            <form action ="../../Backend/policy-application.php" method="post">
+                
+                <label for="Full Name"> Full Name:</label>
+                <input type="text" name="fullname" placeholder="Full Name" required><br><br/>
+        
+                <label for="nic">NIC:</label>
+                <input type="text" id="nic" name="nic" length="20" required><br><br>
+        
+                <label for="dob">Date of Birth:</label>
+                <input type="date" id="dob" name="dob" required><br><br>
+        
+                <label for="income">Income:</label>
+                <input type="number" id="amount" step="0.01" placeholder="0.00" required><br><br/>
+        
+                <label for="street">Street:</label>
+                <input type="text" id="street" name="street" length="200" required><br><br>
+        
+                <label for="postal_code">Postal Code:</label>
+                <input type="number" id="postal_code" name="postal_code" required><br><br>
+        
+                <label for="city">City:</label>
+                <input type="text" id="city" name="city" length="20" required><br><br>
+        
+                <label for="province">Province:</label>
+                <input type="text" id="province" name="province" length="25" required><br><br>
+        
+                <label for="country">Country:</label>
+                <input type="text" id="country" name="country" length="50" required><br><br>
+        
+                <button type="submit">Submit Application</button>
+                <button type="reset" >Reset Application</button>  
             </form>
         </div>  
+        <script src="../Assets/JS/policyApplication.js"></script>
     </body>
 </html>
