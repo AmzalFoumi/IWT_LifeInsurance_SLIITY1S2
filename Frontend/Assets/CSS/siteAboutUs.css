@@ -1,0 +1,53 @@
+/*CSS for the about us page*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/*Added css for the body of the page*/
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: rgb(176, 221, 214);
+    color: black;
+}
+/*containers for the main content*/
+.container {
+    width: 80;
+    margin: flex;
+    padding: 20px;
+}
+/*Header section for the image*/
+.header-image {
+    width: 100;
+    height: 300px;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/*About sections show the css design part*/
+.about-section {
+    margin: 24px 0;
+    padding: 24px;
+    background-color: rgb(226, 237, 233);
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(176, 27, 27, 0.1);
+}
+/*css for the h2 heading section details*/
+.about-section h2 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+/*css for the paragraph sections*/
+.about-section p {
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+.header-image img {
+    max-width: 100;
+    max-height: 100;
+}
