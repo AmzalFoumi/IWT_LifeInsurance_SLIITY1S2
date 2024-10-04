@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 30, 2024 at 01:25 PM
+-- Generation Time: Oct 03, 2024 at 02:52 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -77,9 +77,16 @@ CREATE TABLE `claim` (
 CREATE TABLE `employee` (
   `EmpId` int(11) NOT NULL,
   `Role` varchar(50) NOT NULL,
-  `Username` int(11) NOT NULL,
-  `Password` int(11) NOT NULL
+  `Username` varchar(50) NOT NULL,
+  `Password` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `employee`
+--
+
+INSERT INTO `employee` (`EmpId`, `Role`, `Username`, `Password`) VALUES
+(1, 'Admin', 'Alien', '$2y$10$um8nLXj72qtYmpEa2Bud9u.jaqq/iWxUJt97qTTebF.RWNy/KJr5K');
 
 -- --------------------------------------------------------
 
@@ -92,12 +99,22 @@ CREATE TABLE `inquiry` (
   `Name` varchar(50) NOT NULL,
   `Title` varchar(5) DEFAULT NULL,
   `Email` varchar(50) DEFAULT NULL,
-  `Phone` int(11) DEFAULT NULL,
+  `MobNum` int(11) DEFAULT NULL,
   `Message` varchar(500) DEFAULT NULL,
   `InqType` varchar(15) DEFAULT NULL,
   `EmpId` int(11) DEFAULT NULL,
   `PolicyId` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `inquiry`
+--
+
+INSERT INTO `inquiry` (`InqId`, `Name`, `Title`, `Email`, `MobNum`, `Message`, `InqType`, `EmpId`, `PolicyId`) VALUES
+(1, 'Amzal', 'undef', 'mohamedamzal6@gmail.com', 701588018, 'One Life DB test 1', 'complaint', NULL, NULL),
+(2, 'lakindy', 'undef', 'lakindy62@gmail.com', 777840455, 'hello, title not working?', 'consult', NULL, NULL),
+(3, 'lakindy', 'undef', 'lakindy62@gmail.com', 777840455, 'hello, title not working?', 'consult', NULL, NULL),
+(4, 'Amzal Foumi', 'undef', 'mohamedamzal6@gmail.com', 1234567890, 'why is this not working', 'consult', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -118,8 +135,15 @@ CREATE TABLE `policyholder` (
   `Province` varchar(25) NOT NULL,
   `Country` varchar(25) NOT NULL,
   `Username` varchar(20) NOT NULL,
-  `Password` int(11) NOT NULL
+  `Password` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `policyholder`
+--
+
+INSERT INTO `policyholder` (`PolicyholderId`, `PolicyId`, `NIC`, `Name`, `DOB`, `Income`, `Street`, `Postal_Code`, `City`, `Province`, `Country`, `Username`, `Password`) VALUES
+(1, 1, '200218202944', 'Amzal Foumi', '2014-06-30', 25000000, '39/2, Kawdana Road', 10350, 'Dehiwala', 'Western Province', 'Sri Lanka', 'Amzal', '$2y$10$mB./01scJcm.R.umH7MDhe8f10/5Z3y2jhvJhc0ty0rAVqxouiLUa');
 
 -- --------------------------------------------------------
 
@@ -145,6 +169,14 @@ CREATE TABLE `policytype` (
   `Coverage` int(11) NOT NULL,
   `Premium` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `policytype`
+--
+
+INSERT INTO `policytype` (`PolicyId`, `PolicyName`, `Coverage`, `Premium`) VALUES
+(1, 'OneLife+', 20000, 200),
+(2, 'OneLife+', 20000, 200);
 
 -- --------------------------------------------------------
 
@@ -260,25 +292,25 @@ ALTER TABLE `claim`
 -- AUTO_INCREMENT for table `employee`
 --
 ALTER TABLE `employee`
-  MODIFY `EmpId` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `EmpId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `inquiry`
 --
 ALTER TABLE `inquiry`
-  MODIFY `InqId` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `InqId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `policyholder`
 --
 ALTER TABLE `policyholder`
-  MODIFY `PolicyholderId` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `PolicyholderId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `policytype`
 --
 ALTER TABLE `policytype`
-  MODIFY `PolicyId` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `PolicyId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `policy_application`

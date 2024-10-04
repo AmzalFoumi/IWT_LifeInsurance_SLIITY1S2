@@ -77,6 +77,14 @@ CREATE TABLE Payment (
 	CONSTRAINT payment_fk_1 FOREIGN KEY (PolicyholderId) REFERENCES Policyholder (PolicyholderId),
 )
 
+CREATE TABLE Employee (
+	EmpId INT IDENTITY(1,1),
+	Role VARCHAR(50),
+	Username VARCHAR(20) UNIQUE NOT NULL,
+	Password VARCHAR(20) NOT NULL,
+	CONSTRAINT employee_pk PRIMARY KEY (EmpId),
+)
+
 CREATE TABLE Policy_Application (
 	ApplicationId INT IDENTITY(1,1),   /*IDENTITY for Microsoft SQL server.  AUTO_INCREMENT for MySQL*/
 	PolicyId INT,
@@ -114,13 +122,6 @@ CREATE TABLE Claim (
 	CONSTRAINT claim_fk_3 FOREIGN KEY (EmpId) REFERENCES Employee(EmpId)
 )
 
-CREATE TABLE Employee (
-	EmpId INT IDENTITY(1,1),
-	Role VARCHAR(50),
-	Username VARCHAR(20) UNIQUE NOT NULL,
-	Password VARCHAR(20) NOT NULL,
-	CONSTRAINT employee_pk PRIMARY KEY (EmpId),
-)
 
 CREATE TABLE Inquiry (
 	InqId INT IDENTITY(1,1),
