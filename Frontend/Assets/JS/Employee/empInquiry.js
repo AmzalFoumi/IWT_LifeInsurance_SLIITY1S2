@@ -20,11 +20,12 @@ function loadInqTable() {
                 <td>${inquiries.PolicyId}</td>
             `;
 
+            
+
             // Add click event listener to the row
             row.addEventListener("click", function() {
                 window.location.href = `${baseURL}/Frontend/Pages/Employee/empInquiryDetails.html?inqId=${inquiries.InqId}`;
             });
-
             
             //tableBody.innerHTML += row; // wrongdisplays as [HTMLTableRowElement]
             
