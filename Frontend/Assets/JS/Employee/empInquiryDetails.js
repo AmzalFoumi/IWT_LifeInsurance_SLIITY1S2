@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", function (){
             .then(response => response.json())
             .then(data => {
                 // Populate the details on the page
-                const detailsDiv = document.getElementById("contentContainer");
+                const detailsDiv = document.getElementById("loadContainer");
                 detailsDiv.innerHTML = `
                     <p><strong>Inquiry ID:</strong> ${data.InqId}</p>
                     <p><strong>Name:</strong> ${data.Name}</p>
@@ -23,4 +23,8 @@ document.addEventListener("DOMContentLoaded", function (){
             })
             .catch(error => console.error("Error fetching inquiry details:", error));
         }
+})
+
+document.getElementById('assignEmp').addEventListener("click", function(){
+
 })
