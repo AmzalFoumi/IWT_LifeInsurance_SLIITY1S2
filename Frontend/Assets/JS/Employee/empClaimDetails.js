@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", function (){
     const claimId = urlParams.get('claimId');  // Retrieve inquiry ID from the URL
 
     if (claimId) {
-        fetch(`${baseURL}/Backend/Employee/empInquiryDetails.php`,{  
+        fetch(`${baseURL}/Backend/Employee/empClaimDetails.php`,{  
             //Specifying method as POST
             method: "POST",
             //Specifying that the data is being sent as URL-encoded data
@@ -18,15 +18,15 @@ document.addEventListener("DOMContentLoaded", function (){
             // Populate the details on the page
             const detailsDiv = document.getElementById("loadContainer");
             detailsDiv.innerHTML = `
-                <p><strong>Inquiry ID:</strong> ${data.ClaimId}</p>
-                <p><strong>Name:</strong> ${data.PolicyholderId}</p>
-                <p><strong>Email:</strong> ${data.BeneficiaryId}</p>
-                <p><strong>Mobile Number:</strong> ${data.PolicyId}</p>
+                <p><strong>Claim ID:</strong> ${data.ClaimId}</p>
+                <p><strong>Policyholder ID:</strong> ${data.PolicyholderId}</p>
+                <p><strong>Beneficiary ID:</strong> ${data.BeneficiaryId}</p>
+                <p><strong>Policy ID:</strong> ${data.PolicyId}</p>
                 <p id="empId"><strong>Employee ID:</strong> ${data.EmpId}</p>  
-                <p><strong>Inquiry Type:</strong> ${data.NIC}</p>
+                <p><strong>NIC:</strong> ${data.NIC}</p>
             `;   //empId is added as an ID to the paragraph tag where the empId is suspposed to be displayed, This is for use in the next function
         })
-        .catch(error => console.error("Error fetching inquiry details:", error));
+        //.catch(error => console.error("Error fetching inquiry details:", error));
     }
 })
 
@@ -71,5 +71,29 @@ document.getElementById('denyClaim').addEventListener("click", function(){
             },600);
         }
     })
-    .catch(error => console.error("Error resolving inquiry:", error));
+    .catch(error => console.error("Error in resolving the claim:", error));
+})
+
+
+document.getElementById('approveClaim').addEventListener("click", function(){
+    const urlParams = new URLSearchParams(window.location.search);        
+    const claimId = urlParams.get('claimId');  // Retrieve inquiry ID from the URL
+
+    fetch(`${baseURL}/Backend/Employee/empClaimDetails.php`,{  
+        method: "POST",
+        headers: {'Content-Type' : 'application/x-www-form-urlencoded'},
+        body: `function=approve_claim&claimId=${claimId}`
+    })
+    .then(response => response.json())
+    .then(data => {
+        const responseDisplay = document.getElementById('responseArea');
+        if (data){
+            responseDisplay.innerText = data.message;
+
+            setTimeout(function () {
+                window.open(`${baseURL}/Frontend/Pages/Employee/empClaimTable.html`, "_self")
+            },1000);
+        }
+    })
+    .catch(error => console.error("Error in resolving the claim:", error));
 })
