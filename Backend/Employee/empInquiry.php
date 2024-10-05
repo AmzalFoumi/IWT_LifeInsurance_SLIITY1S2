@@ -12,7 +12,7 @@
     if ($result->num_rows > 0) {
         $inquiries = [];
         while($row = $result->fetch_assoc()) {        //fetch_assoc retrives the rows from the mysql table as an associative array - Amzal
-            $inquiries[] = $row;
+            $inquiries[] = $row;     //appends item $row to the array
         }
         echo json_encode($inquiries);
     } else {

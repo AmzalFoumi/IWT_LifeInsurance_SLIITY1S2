@@ -100,9 +100,9 @@
     //End of resolving issue function
 
     //Code to run functions based on what you get from URL
-    if (isset($_GET['function'])) {
-        $specificFunction = $_GET['function'];
-        $inqIdArg = $_GET['inqId'];
+    if ($_SERVER["REQUEST_METHOD"] === "POST") {
+        $specificFunction = $_REQUEST['function'];
+        $inqIdArg = $_REQUEST['inqId'];
         if (function_exists($specificFunction)) {
           $result = $specificFunction($inqIdArg); // Call the specified function
           //echo "Function". $specificFunction ."has run";

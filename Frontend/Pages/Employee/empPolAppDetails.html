@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Dashboard</title>
+
+    <link rel="stylesheet" href="http://localhost/IWTProject/IWT_LifeInsurance_SLIITY1S2/Frontend/Assets/CSS/main.css">
+    <link rel="stylesheet" href="http://localhost/IWTProject/IWT_LifeInsurance_SLIITY1S2/Frontend/Assets/CSS/dashboardStructure.css">
+    <link rel="stylesheet" href="http://localhost/IWTProject/IWT_LifeInsurance_SLIITY1S2/Frontend/Assets/CSS/Employee/empDashboardNavBar.css">
+    <link rel="stylesheet" href="http://localhost/IWTProject/IWT_LifeInsurance_SLIITY1S2/Frontend/Assets/CSS/Employee/empDashboardHeader.css">
+    
+</head>
+<body>
+    <div id="container">
+        <nav id="leftNavbar">
+    
+            
+        </nav>
+        <div id="right">
+            <header id="topNavbar">
+                <!--Header comes here-->
+                <div class="header">
+                    <h1 class="heading">One Life Insurance</h1>
+                    <div>
+                        <div id="username">
+                        </div>
+                    </div>
+                </div>
+            </header>
+            <div id="contentContainer">
+                <div id="loadContainer">
+                    <!--content loaded from Database comes here-->
+                </div>
+                <div id="staticContent">
+                    <button id="assignEmp">Assign Yourself</button>
+                    <span id="responseArea"></span>
+                    <button id="approveApp">Approve Application</button>
+                    <button id="denyApp">Deny Application</button> <br>
+                    <div id="formArea">
+                        <!--<form id="policyholderAccForm" style="display:none;">
+                            <label for="policyHolderUsername">Enter the Username to be given to policyholder:</label>
+                            <input type="text" name="policyHolderUsername" id="policyHolderUsername"> <br>
+                            <label for="policyHolderPassword">Enter new password: </label>
+                            <input type="password" name="policyHolderPassword" id="policyHolderPassword">
+                            <input type="submit" value="Add User">
+                            <input type="reset" value="Cancel">
+                        </form>-->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="http://localhost/IWTProject/IWT_LifeInsurance_SLIITY1S2/Frontend/Assets/JS/Employee/empDashboardNavBar.js"></script>
+    <script src="../../Assets/JS/Employee/empPolAppDetails.js"></script>
+</body>
+</html>

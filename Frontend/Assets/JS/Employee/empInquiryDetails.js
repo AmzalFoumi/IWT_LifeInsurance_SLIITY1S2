@@ -5,7 +5,14 @@ document.addEventListener("DOMContentLoaded", function (){
     const inqId = urlParams.get('inqId');  // Retrieve inquiry ID from the URL
 
     if (inqId) {
-        fetch(`${baseURL}/Backend/Employee/empInquiryDetails.php?inqId=${inqId}&function=load_page`)
+        fetch(`${baseURL}/Backend/Employee/empInquiryDetails.php`,{  
+            //Specifying method as POST
+            method: "POST",
+            //Specifying that the data is being sent as URL-encoded data
+            headers: {'Content-Type' : 'application/x-www-form-urlencoded'},
+            //Data sent to server as URL encoded string, in key-value pairs.  PHP file reads the key and takes in the value
+            body: `inqId=${inqId}&function=load_page`
+        })
         .then(response => response.json())
         .then(data => {
             // Populate the details on the page
@@ -29,7 +36,11 @@ document.getElementById('assignEmp').addEventListener("click", function(){
     const urlParams = new URLSearchParams(window.location.search);        
     const inqId = urlParams.get('inqId');  // Retrieve inquiry ID from the URL
 
-    fetch(`${baseURL}/Backend/Employee/empInquiryDetails.php?function=assign_employee&inqId=${inqId}`)
+    fetch(`${baseURL}/Backend/Employee/empInquiryDetails.php`,{  
+        method: "POST",
+        headers: {'Content-Type' : 'application/x-www-form-urlencoded'},  
+        body: `function=assign_employee&inqId=${inqId}`
+    })
     .then(response => response.json())
     .then(data =>{
         const responseDisplay = document.getElementById('responseArea');
@@ -46,7 +57,11 @@ document.getElementById('deleteInq').addEventListener("click", function(){
     const urlParams = new URLSearchParams(window.location.search);        
     const inqId = urlParams.get('inqId');  // Retrieve inquiry ID from the URL
 
-    fetch(`${baseURL}/Backend/Employee/empInquiryDetails.php?function=resolve_inq&inqId=${inqId}`)
+    fetch(`${baseURL}/Backend/Employee/empInquiryDetails.php`,{  
+        method: "POST",
+        headers: {'Content-Type' : 'application/x-www-form-urlencoded'},
+        body: `function=resolve_inq&inqId=${inqId}`
+    })
     .then(response => response.json())
     .then(data => {
         const responseDisplay = document.getElementById('responseArea');
