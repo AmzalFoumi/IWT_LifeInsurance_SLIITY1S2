@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="../../Assets/CSS/policyHolder.css">
     <link rel="stylesheet" href="../../Assets/CSS/dashboardNavBar.css">
     <link rel="stylesheet" href="../../Assets/CSS/dashboardStructure.css">
-    
+</head>
 <body>
 
     <nav>
@@ -53,33 +53,33 @@
                 <div ><!--First Name-->
                     <label >Name</label><br>
                     <input id="name" type="text" name="name" readonly>
-                    <span id="nameError" class="error-message"></span>
+                    <label id="lblName" style="color: red; visibility: hidden;"></label>
                 </div>
 
                 <div ><!-- User Name-->
                     <label >Username</label><br>
                     <input id="username" type="text" name="name" readonly>
-                    <span id="nameError" class="error-message"></span>
+                    <label id="lblUsername" style="color: red; visibility: hidden;"></label>
                 </div>
 
                 <div ><!-- User Name-->
-                    <label >password</label><br>
+                    <label >Password</label><br>
                     <input id="password" type="text" name="password" readonly>
-                    <span id="nameError" class="error-message"></span>
+                    <label id="lblPassword" style="color: red; visibility: hidden;"></label>
                 </div>
     
             
                 <div> <!--Date of Birth-->
                     <label >Date Of Birth</label><br>
                     <input id="dob" type="date" name="dob" readonly>
-                    <span id="dobError" class="error-message"></span>
+                    <label id="lblDob" style="color: red; visibility: hidden;"></label>
                 </div>
     
     
                 <div> <!--NIC-->
                     <label >NIC</label><br>
                     <input id="nic" type="text" name="nic" readonly>
-                    <span id="nicError" class="error-message"></span>
+                    <label id="lblNic" style="color: red; visibility: hidden;"></label>
                 </div>
             </div>
         
@@ -87,12 +87,12 @@
                 <div>
                     <label >Permanent Address</label><br>
                     <input id="street" placeholder="Street" name="street" readonly>
-                    <!-- <input type="text" placeholder="Address Line 2" readonly> -->
                     <input id="city" type="text" placeholder="City" name="city" readonly>
                     <input id="province" type="text" placeholder="Provice" name="province" readonly>
                     <input id="country" type="text" placeholder="Country" name="country" readonly>
                     <input id="postalCode" type="number" placeholder="Postal Code(number)" name="postalCode" readonly>
-                    <span id="postalCodeError" class="error-message"></span>
+
+                    <label id="lblPostalCode" style="color: red; visibility: hidden;"></label>
                     
                 </div>
             </div>
@@ -103,7 +103,7 @@
                 <div>
                     <label >Phone</label><br>
                     <input id="phone" type="tel" placeholder="(076) 757-1212" name="phone" readonly>
-                    <span id="phoneError" class="error-message"></span>
+                    <label id="lblPhone" style="color: red; visibility: hidden;"></label>
                 </div>
             
                 <!-- <div> 

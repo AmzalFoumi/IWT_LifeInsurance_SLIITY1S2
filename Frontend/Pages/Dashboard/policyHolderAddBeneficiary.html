@@ -41,11 +41,11 @@
 
     <h2>Adding Beneficiary</h2>
     
-    <form action="">
+    <form action="addBeneficiary.php" method="POST">
         <div> <!--full Name-->
             <div>
                 <label >Full Name</label><br>
-                <input type="text" >
+                <input id="name" type="text" name="name">
             </div>
         
             <!--<div> 
@@ -53,14 +53,14 @@
                 <input type="text" >
             </div>-->
         
-            <div> <!--Date of Birth-->
+            <!-- <div>
                 <label >Date Of Birth</label><br>
                 <input type="number">
-            </div>
+            </div> -->
     
             <div> <!--NIC-->
                 <label >NIC</label><br>
-                <input type="text" >
+                <input id="nic" type="text" name="nic">
             </div>
     
             <!--<div> relationship type
@@ -74,12 +74,12 @@
         <div> <!--Permanent address-->
             <div>
                 <label >Permanent Address</label><br>
-                <input type="text" placeholder="Address Line 1">
-                <input type="text" placeholder="Address Line 2">
-                <input type="text" placeholder="Address Line 3">
-                <input type="text" placeholder="City">
-                <input type="text" placeholder="Country">
-                <input type="number" placeholder="Postal Code">
+                <input id="street" type="text" name="street" placeholder="Street">
+                <!-- <input type="text" placeholder="Address Line 2"> -->
+                <input id="city" type="text" name="city" placeholder="City">
+                <input id="province" type="text" name="province" placeholder="Province">
+                <input id="country" type="text" name="country" placeholder="Country">
+                <input id="postalCode" type="number" name="postalCode" placeholder="Postal Code">
             </div>
         </div>
     
@@ -102,27 +102,27 @@
         <div> <!--Phone number-->
             <div>
                 <label >Phone</label><br>
-                <input type="tel" placeholder="(076) 757-1212">
+                <input id="phone" type="tel" name="phone" placeholder="(076) 757-1212">
             </div>
         
-            <div> <!--Email address-->
+            <!-- <div>
                 <label >Email</label><br>
                 <input type="email" placeholder="oneLife@gmail.com">
-            </div>
+            </div> -->
         </div>
     
         <br>
     
         <div>
             <a href="http://localhost/IWTProject/IWT_LifeInsurance_SLIITY1S2/Frontend/Pages/Dashboard/policyHolderBeneficary.html">
-                <button id="cancelButton" class="button">Cancel </button>
+                <button id="cancelButton" class="button">Cancel</button>
             </a> <!--cancel button-->
-            <button class="button">Save Changes</button>  <!--Save changes button-->
+            <button id="add" type="submit" class="button" name="submit">Add</button>  <!--Save changes button-->
         </div>
     
     </form>
         
-    <script src="/Frontend/Assets/JS/policyHolder.js"></script>
+    <script src="http://localhost/IWTProject/IWT_LifeInsurance_SLIITY1S2/Frontend/Assets/JS/policyHolder.js"></script>
     </div>
 
     

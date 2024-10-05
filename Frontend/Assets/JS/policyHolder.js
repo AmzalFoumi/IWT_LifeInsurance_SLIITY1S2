@@ -75,9 +75,14 @@ saveButton.addEventListener('click', () => {
     cancelButton.classList.add('hidden');
     saveButton.classList.add('hidden');
     editButton.classList.remove('hidden');
-    submitForm();
+    // submitForm(validate());
     // const form = document.getElementById('editForm');
     // form.submit();
+
+    // validate();
+    submitForm();
+    
+
     
 
 
@@ -92,104 +97,20 @@ saveButton.addEventListener('click', () => {
 
 
 
-//Form validations
-//To validate names and address input fields.
-function validateText (text) {
-    const validateText = /^[a-zA-Z]{50}$/;
-    return validateText.test(text);
-}
-
-// To validate Date of Birth
-function validateDOB () {
-
-}
-
-//To validate  NIC number which has 12 digits in New NIC, that will be used.
-function validateNIC (NIC) {
-    const validateNIC = /^[0-9]{12}$/;
-    return validateNIC.test(NIC);
-
-}
-
-//postal code format in sri lanka which is 5 digits
-function validatePostalCode (postalCode) {
-    const validatePostalCode = /^[0-9]{5}$/;
-    return validatePostalCode (postalCode);
-
-}
-
-function validatePhone (phone) {
-    const validatePhone = /^[0-9]{10}$/ ;
-    return validatePhone.test(phone);
-}
-
-//To validate email
-function validateEmail (email) {
-    const validEmail = /^[a-zA-Z0-9._]+@[a-zA-Z0-9._]+\.[a-z]{2,3}$/;
-    return validEmail.test(email);
-
-}
-
-
-
-// this fucntion is to check whether all input fields has valid input.
-function validateForm() {
-
-    const nameInput = document.getElementById('name');
-    const dobInput = document.getElementById('DOB');
-    const nicInput = document.getElementById('NIC');
-    const phoneInput = document.getElementById('phone');
-    const emailInput = document.getElementById('email');
-    const postalCodeInput = document.getElementById('postalCode');
-
-    const isValidName = validateName(nameInput.value);
-    const isValidDOB = validateDOB(dobInput.value);
-    const isValidNIC = validateNIC(nicInput.value);
-    const isValidPhone = validatePhone(phoneInput.value);
-    const isValidEmail = validateEmail(emailInput.value);
-    const isValidPostalCode = validatePostalCode(postalCodeInput.value);
-
-    if (!isValidName || !isValidDOB || !isValidNIC || !isValidPhone || !isValidEmail || !isValidPostalCode) {
-
-        showErrorMessage(nameInput, isValidName, 'nameError', 'Reached maximum word limit');
-        // showErrorMessage(dobInput, isValidDOB, 'dobError' , '');
-        showErrorMessage(nicInput, isValidNIC, 'nicError', 'Please enter 12 digit number NIC number');
-        showErrorMessage(phoneInput, isValidPhone, 'phoneError', 'Please enter 10 digit number');
-        showErrorMessage(emailInput, isValidEmail, 'emailError', 'Please enter correct email format (eg:-onelife@gmail.com)');
-        showErrorMessage(postalCodeInput, isValidPostalCode, 'postalCodeError', 'Please enter 6 digit Postal Code');
-
-        return false; // this will return false if the form is not valid.
-    }
-
-    return true;
-    
-}
-
-
-//this function will show error message below the input field, if the input is not valid. this will appear inside span element
-
-function showErrorMessage(inputElement, isValid, errorMessageID, errorMessage) {
-    const errorMessageElement = document.getElementById(errorMessageID);
-
-    if (!isValid) {
-        //if there is an error, this will show the message
-        errorMessageElement.textContent = errorMessage;
-        inputElement.classList.add('invalid');
-
-    } else {
-        errorMessageElement.textContent = '';
-        inputElement.classList.remove('invalid');
-    }
-
-}
-
 
 //form submission logi
 function submitForm()
 {
     // event.preventDefault();
     const form = document.getElementById('editForm');
-    form.submit();
+    // form.submit();
+    if (validate())
+    {
+        form.submit();
+    }
+    else {
+        false;
+    }
     
 }
 
@@ -207,3 +128,81 @@ function submitForm()
 //     }
 
 // });
+
+//this will validate the input fields
+function validate()
+{
+
+    var vName = document.getElementById("name");
+    var vUsername = document.getElementById("username");
+    // var vPassword = document.getElementById("password").value;
+    // var vDob = document.getElementById("dob").value;
+    var vNic = document.getElementById("nic");
+    var vPostalcode = document.getElementById("postalCode");
+    var vPhone = document.getElementById("phone");
+
+
+    //below the will have the regular expression to compare the value and expression, whether it matches
+
+    var regxName = /^([a-zA-Z]{2,50})$/;
+    var regxUsername = /^([a-zA-Z]{2,50})$/;
+    var regxNic = /^([0-9]{12})$/;
+    var regxPostalcode = /^([0-9]{5})$/;
+    var regxPhone = /^([0-9]{5})$/;
+
+    if (vName.value.trim()=="" || regxName.test(vName.value))    
+        {
+            
+            vName.style.border = "solid 3px red";
+            document.getElementById("lblName").style.visibility="visible";
+        
+            document.getElementById("lblName").innerHTML="Name field is required*";
+        
+            return false;
+            
+        } 
+        else if (vUsername.value.trim()=="" || regxUsername.test(vUsername.value))
+            {
+                vUsername.style.border = "solid 3px red";
+                document.getElementById("lblUsername").style.visibility="visible";
+        
+                document.getElementById("lblUsername").innerHTML="Username field is required*";
+        
+                return false;
+            
+            }
+        else if (vNic.value.trim()=="" || regxNic.test(vNic.value))
+            {
+                vNic.style.border = "solid 3px red";
+                document.getElementById("lblNic").style.visibility="visible";
+        
+                document.getElementById("lblNic").innerHTML="Please enter 12 digit NIC (eg:-200215501234)";
+        
+                return false;
+            
+            }
+        else if (vPostalcode.value.trim()=="" || regxPostalcode.test(vPostalcode.value))
+            {
+                vPostalcode.style.border = "solid 3px red";
+                document.getElementById("lblPostalCode").style.visibility="visible";
+        
+                document.getElementById("lblPostalCode").innerHTML="Postal code 5 digit (eg:-60200)";
+        
+                return false;
+            }
+
+        else if (vPhone.value.trim()=="" || regxPhone.test(vPhone.value))
+            {
+                vPhone.style.border = "solid 3px red";
+                document.getElementById("lblPhone").style.visibility="visible";
+        
+                document.getElementById("lblPhone").innerHTML="Please enter 10 digit phone number(eg:-(076) 757 5757).";
+        
+                return false;
+            }
+
+        else {
+            return true;
+        }
+        
+}
