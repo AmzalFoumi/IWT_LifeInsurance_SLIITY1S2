@@ -9,7 +9,6 @@
     <link rel="stylesheet" href="http://localhost/IWTProject/IWT_LifeInsurance_SLIITY1S2/Frontend/Assets/CSS/dashboardStructure.css">
     <link rel="stylesheet" href="http://localhost/IWTProject/IWT_LifeInsurance_SLIITY1S2/Frontend/Assets/CSS/Employee/empDashboardNavBar.css">
     <link rel="stylesheet" href="http://localhost/IWTProject/IWT_LifeInsurance_SLIITY1S2/Frontend/Assets/CSS/Employee/empDashboardHeader.css">
-    <link rel="stylesheet" href="http://localhost/IWTProject/IWT_LifeInsurance_SLIITY1S2/Frontend/Assets/CSS/Employee/empTables.css">
     
 </head>
 <body>
@@ -30,24 +29,19 @@
                 </div>
             </header>
             <div id="contentContainer">
-                <!--Content comes here-->
-                
-                <table id="claimTable">
-                    <tr id="headRow">
-                        <th>Claim ID</th>
-                        <th>Policyholder ID</th>
-                        <th>Beneficiary ID</th>
-                        <th>Policy ID</th>
-                        <th>Employee ID</th>
-                        <th>NIC</th>
-                        <th>Name</th>
-                    </tr>
-
-                </table>
+                <div id="loadContainer">
+                    <!--content loaded from Database comes here-->
+                </div>
+                <div id="staticContent">
+                    <button id="assignEmp">Assign Yourself</button>
+                    <span id="responseArea"></span>
+                    <button id="approveApp">Approve Application</button>
+                    <button id="denyApp">Deny Application</button>
+                </div>
             </div>
         </div>
     </div>
-    <script src="../../Assets/JS/Employee/empDashboardNavBar.js"></script>
-    <script src="../../Assets/JS/Employee/empClaimTable.js"></script>
+    <script src="http://localhost/IWTProject/IWT_LifeInsurance_SLIITY1S2/Frontend/Assets/JS/Employee/empDashboardNavBar.js"></script>
+    <script src="../../Assets/JS/Employee/empPolAppDetails.js"></script>
 </body>
 </html>
