@@ -10,7 +10,6 @@
     <link rel="stylesheet" href="http://localhost/IWTProject/IWT_LifeInsurance_SLIITY1S2/Frontend/Assets/CSS/Employee/empDashboardNavBar.css">
     <link rel="stylesheet" href="http://localhost/IWTProject/IWT_LifeInsurance_SLIITY1S2/Frontend/Assets/CSS/Employee/empDashboardHeader.css">
     <link rel="stylesheet" href="http://localhost/IWTProject/IWT_LifeInsurance_SLIITY1S2/Frontend/Assets/CSS/Employee/empTables.css">
-    
 </head>
 <body>
     <div id="container">
@@ -30,29 +29,20 @@
                 </div>
             </header>
             <div id="contentContainer">
-                <!--Content comes here-->
-                
-                <table id="policyTable">
-                    <tr id="headRow">
-                        <th>Application ID</th>
-                        <th>Policy Number</th>
-                        <th>Employee ID</th>
-                        <th>NIC</th>
-                        <th>Name</th>
-                        <th>DOB</th>
-                        <th>Income</th>
-                        <th>Street</th>
-                        <th>Postal Code</th>
-                        <th>City</th>
-                        <th>Province</th>
-                        <th>Country</th>
-                    </tr>
-
-                </table>
+                <div id="loadContainer">
+                    <!--content loaded from Database comes here-->
+                </div>
+                <div id="staticContent">
+                    <button id="assignEmp">Assign Yourself</button>
+                    <span id="responseArea"></span><br><br>
+                    <button id="approveClaim">Approve Claim</button>
+                    <span>         </span>
+                    <button id="denyClaim">Deny Claim</button> <br>
+                </div>
             </div>
         </div>
     </div>
-    <script src="../../Assets/JS/Employee/empDashboardNavBar.js"></script>
-    <script src="../../Assets/JS/Employee/empPolicyTable.js"></script>
+    <script src="http://localhost/IWTProject/IWT_LifeInsurance_SLIITY1S2/Frontend/Assets/JS/Employee/empDashboardNavBar.js"></script>
+    <script src="../../Assets/JS/Employee/empClaimDetails.js"></script>
 </body>
 </html>
