@@ -67,7 +67,7 @@ CREATE TABLE Benefeciary_phone (
 	CONSTRAINT beneficiaryPhone_fk FOREIGN KEY (PolicyholderId,BeneficiaryId) REFERENCES Beneficiary(PolicyholderId,BeneficiaryId),
 )
 
-CREATE TABLE Payment (
+CREATE TABLE Payment ( 
 	PolicyholderId INT,
 	PayId INT IDENTITY(1,1),   /*IDENTITY for Microsoft SQL server.  AUTO_INCREMENT for MySQL*/
 	Reference VARCHAR (25),
