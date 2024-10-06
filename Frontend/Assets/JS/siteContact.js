@@ -10,6 +10,15 @@ document.getElementById("contactForm").addEventListener("submit", function(event
     const inqType = document.getElementById("inqType").value;
     const message = document.getElementById("message").value;
 
+
+    //Validation to make sure all fields are required
+    if (!fullName || !title || !mobNum || !email || !inqType || !message) {
+        alert("Please fill in all required fields.");
+        return;
+    }
+
+
+
     fetch(`${baseURL}/siteContact.php`,{     
         //Specifying method as POST
         method: "POST",
