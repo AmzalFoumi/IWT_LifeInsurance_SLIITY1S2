@@ -6,14 +6,42 @@
     <title>Beneficiary</title>
     <link rel="stylesheet" href="../../Assets/CSS/main.css">
     <link rel="stylesheet" href="../../Assets/CSS/policyHolder.css">
+    <link rel="stylesheet" href="../../Assets/CSS/dashboardNavBar.css">
+
 
 </head>
 <body>
+
+    <nav>
+        <div class="sidenav">
+            <div style="text-align: center;">
+                <img src="../../Assets/Images/logo_bird.jpg" alt="" id="logo" >
+            </div>
+            <a href="http://localhost/IWTProject/IWT_LifeInsurance_SLIITY1S2/Frontend/Pages/Dashboard/policyHolderDashboard.html">Dashboard</a>
+            <a href="http://localhost/IWTProject/IWT_LifeInsurance_SLIITY1S2/Frontend/Pages/Dashboard/policyHolderProfile.html">Profile</a>
+            <a href="http://localhost/IWTProject/IWT_LifeInsurance_SLIITY1S2/Frontend/Pages/Dashboard/policyHolderBeneficary.html">Beneficiary</a>
+            <a href="http://localhost/IWTProject/IWT_LifeInsurance_SLIITY1S2/Frontend/Pages/Dashboard/policyHolderPaymentHistory.html">Payments</a>
+            <a href="#">Support</a>
+            <a href="#">Settings</a>
+            <a id="logOut" href="#">Log Out</a>
+        </div>
+    </nav>
+   
     
-    <h2>Beneficiary Management</h2>
+    <div class="header">
+        <h1 class="heading">One Life Insurance</h1>
+        <div class="padding">
+            <button class="navButton">Claim</button>
+            <span class="username">Username</span>
+        </div>
+
+    </div>
+
+    <div class="main">
+        <h2>Beneficiary Management</h2>
 
     <div>
-        <a href="policyHolderAddBeneficiary.html"><button class="button smaller_button"> Add</button></a> Beneficiary
+        <a href="http://localhost/IWTProject/IWT_LifeInsurance_SLIITY1S2/Frontend/Pages/Dashboard/policyHolderAddBeneficiary.html"><button class="button smaller_button"> Add</button></a> Beneficiary
 
     </div>
 
@@ -86,18 +114,8 @@
                     row.appendChild(phoneCodeCell);
 
                 
-                    //this will add delete button
-                    const deleteButtonCell = document.createElement('td');
-                    const deleteButton = document.createElement('button');
-                    deleteButton.textContent = "Delete";
-
-
-                    //this will add class to the deletebutton to style 
-                    deleteButton.classList.add("deleteButton");
-
-                    deleteButtonCell.appendChild(deleteButtonCell);
-                    row.appendChild(deleteButtonCell); //this will append the deletebutton cell to row
-
+                    
+                    // this code for delete button is below, have to fix it to wotk properly
                     
 
 
@@ -109,5 +127,21 @@
                 console.error('Error fetching data:', error);
             });
     </script>
+    </div>
+
+
+    <!-- //this will add delete button
+                    const deleteButtonCell = document.createElement('td');
+                    const deleteButton = document.createElement('button');
+                    deleteButton.textContent = "Delete";
+
+
+                    //this will add class to the deletebutton to style 
+                    deleteButton.classList.add("deleteButton");
+
+                    deleteButtonCell.appendChild(deleteButtonCell);
+                    row.appendChild(deleteButtonCell); //this will append the deletebutton cell to row -->
+    
+    
 </body>
 </html>
