@@ -17,7 +17,15 @@ document.getElementById("contactForm").addEventListener("submit", function(event
         return;
     }
 
+    if (!isValidEmail(email)) {
+        alert("Please enter a valid email address.");
+        return; // Stop the form submission
+    }
 
+    if (!isValidMobileNumber(mobNum)) {
+        alert("Please enter a valid mobile number.");
+        return; // Stop the form submission
+    }
 
     fetch(`${baseURL}/siteContact.php`,{     
         //Specifying method as POST
@@ -42,5 +50,17 @@ document.getElementById("contactForm").addEventListener("submit", function(event
 })
 
 
+// Function to validate email addresses
+function isValidEmail(email) {
+    
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;  //ex - abc@efg.com
+    return emailRegex.test(email);
+}
 
+// Function to validate mobile numbers 
+function isValidMobileNumber(mobNum) {
+    
+    const mobNumRegex = /^\d{10}$/;
+    return mobNumRegex.test(mobNum);
+}
 
