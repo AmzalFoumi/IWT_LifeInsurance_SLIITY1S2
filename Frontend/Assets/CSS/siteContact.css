@@ -1,4 +1,73 @@
 div{
-    border: solid black;
     padding: 10px;
+ 
+}
+
+
+#content{
+    height: 70vh;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-image: url("../Images/contact_bg.jpg");
+    background-color: rgba(240, 248, 255, 0.072);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-blend-mode:multiply;
+    opacity: 1; 
+}
+
+#content div{
+    background-color: white;
+    opacity: 0.9;
+}
+
+#contactFormHeading{
+    display: flex;
+    width: 60%;
+    justify-content: center;
+    font-size: 4rem;
+    font-weight: 700;
+}
+
+
+/*Division that has both the form and the contact details in it, after the actual heading*/
+#formDiv{
+    display: flex;
+    width: 60%;
+    justify-content: center;
+}
+
+/*Divisiiong that contains the contact details*/
+#contactDetails{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-size: larger;
+    border-right: solid;
+}
+
+/*division with the form in it*/
+#contactForm{
+    width: 100%;
+    /*border-left: solid;*/
+    display: grid;
+
+    grid-template-columns: 1fr 2fr;
+    grid-template-rows: 7(1fr);
+    gap: 20px;
+}
+
+/*The div containing the submit and cancel buttons*/
+#btn{
+    grid-column: span 2;
+    display: flex;
+    justify-content: space-around;
+}
+
+#btn input{
+    padding: 10px;
+    width: 100px;
 }
