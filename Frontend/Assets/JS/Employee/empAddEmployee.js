@@ -1,4 +1,4 @@
-<script>
+
     document.addEventListener("DOMContentLoaded", function() 
     {
         const form = document.querySelector("form");
@@ -61,4 +61,3 @@
         // This is to Disable submit button until form is filled
         checkFormValidity();
     });
-</script>
