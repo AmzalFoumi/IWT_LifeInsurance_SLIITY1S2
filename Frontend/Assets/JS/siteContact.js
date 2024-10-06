@@ -4,7 +4,7 @@ document.getElementById("contactForm").addEventListener("submit", function(event
     event.preventDefault();    //Prevent reloading the page
 
     const fullName = document.getElementById("fullName").value;
-    const title = document.getElementsByName("title").value;
+    const title = document.getElementById("title").value;
     const mobNum = document.getElementById("mobNum").value;
     const email = document.getElementById("email").value;
     const inqType = document.getElementById("inqType").value;
