@@ -4,11 +4,28 @@ document.getElementById("contactForm").addEventListener("submit", function(event
     event.preventDefault();    //Prevent reloading the page
 
     const fullName = document.getElementById("fullName").value;
-    const title = document.getElementsByName("title").value;
+    const title = document.getElementById("title").value;
     const mobNum = document.getElementById("mobNum").value;
     const email = document.getElementById("email").value;
     const inqType = document.getElementById("inqType").value;
     const message = document.getElementById("message").value;
+
+
+    //Validation to make sure all fields are required
+    if (!fullName || !title || !mobNum || !email || !inqType || !message) {
+        alert("Please fill in all required fields.");
+        return;
+    }
+
+    if (!isValidEmail(email)) {
+        alert("Please enter a valid email address.");
+        return; // Stop the form submission
+    }
+
+    if (!isValidMobileNumber(mobNum)) {
+        alert("Please enter a valid mobile number.");
+        return; // Stop the form submission
+    }
 
     fetch(`${baseURL}/siteContact.php`,{     
         //Specifying method as POST
@@ -33,5 +50,17 @@ document.getElementById("contactForm").addEventListener("submit", function(event
 })
 
 
+// Function to validate email addresses
+function isValidEmail(email) {
+    
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;  //ex - abc@efg.com
+    return emailRegex.test(email);
+}
 
+// Function to validate mobile numbers 
+function isValidMobileNumber(mobNum) {
+    
+    const mobNumRegex = /^\d{10}$/;
+    return mobNumRegex.test(mobNum);
+}
 
