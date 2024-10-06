@@ -1,6 +1,9 @@
 <?php
+session_start();
+require_once "../include/DB_connect.php";
+$conn = DB_conn();
 //crdidetials
-$servername = "localhost";
+/*$servername = "localhost";
 $username = "root";
 $password = "";
 $dbname = "onelife_team_db";
@@ -11,7 +14,7 @@ $conn = new mysqli($servername, $username, $password, $dbname);
 //connection was successful
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
-}
+}*/
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     

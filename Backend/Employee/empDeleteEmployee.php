@@ -1,6 +1,9 @@
 <?php
+session_start();
+require_once "../include/DB_connect.php";
+$conn = DB_conn();
 // Database credentials
-$servername = "localhost";
+/*$servername = "localhost";
 $username = "root";
 $password = "";
 $dbname = "onelife_team_db";
@@ -11,7 +14,9 @@ $conn = new mysqli($servername, $username, $password, $dbname);
 // Check if the connection was successful
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
-}
+}*/
+
+
 
 // Check if the employee ID is passed through a form or query string
 if (isset($_POST['employee_id'])) {
