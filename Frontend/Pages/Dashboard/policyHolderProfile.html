@@ -14,7 +14,7 @@
     <nav>
         <div class="sidenav">
             <div style="text-align: center;">
-                <img src="../../Assets/Images/logo_bird.jpg" alt="" id="logo" >
+                <img src="../../Assets/Images/logo_bird.jpg"  alt="" id="logo" >
             </div>
             <a href="http://localhost/IWTProject/IWT_LifeInsurance_SLIITY1S2/Frontend/Pages/Dashboard/policyHolderDashboard.html">Dashboard</a>
             <a href="http://localhost/IWTProject/IWT_LifeInsurance_SLIITY1S2/Frontend/Pages/Dashboard/policyHolderProfile.html">Profile</a>
@@ -41,45 +41,40 @@
         <div> <!--Profile Picture-->
             <label id="pageName">Profile</label>
             <div>
-                <img src="http://localhost/IWTProject/IWT_LifeInsurance_SLIITY1S2/Frontend/Assets/Images/profilePicture.png" alt="" style="border: 1px; width: 150px; height: 150px;">
+                <img src="http://localhost/IWTProject/IWT_LifeInsurance_SLIITY1S2/Frontend/Assets/Images/profilePicture.png" alt="" style="border: 1px; width: 175px; height: 175px; border-radius: 50%;">
             </div>
         </div>
     
 
-        <form id="editForm" action="" method="post">
+        <form id="editForm" action="updateProfile.php" method="post">
     
     
             <div> 
                 <div ><!--First Name-->
                     <label >Name</label><br>
                     <input id="name" type="text" name="name" readonly>
-                    <label id="lblName" style="color: red; visibility: hidden;"></label>
                 </div>
 
                 <div ><!-- User Name-->
                     <label >Username</label><br>
-                    <input id="username" type="text" name="name" readonly>
-                    <label id="lblUsername" style="color: red; visibility: hidden;"></label>
+                    <input id="username" type="text" name="username" readonly>
                 </div>
 
                 <div ><!-- User Name-->
                     <label >Password</label><br>
                     <input id="password" type="text" name="password" readonly>
-                    <label id="lblPassword" style="color: red; visibility: hidden;"></label>
                 </div>
     
             
                 <div> <!--Date of Birth-->
                     <label >Date Of Birth</label><br>
                     <input id="dob" type="date" name="dob" readonly>
-                    <label id="lblDob" style="color: red; visibility: hidden;"></label>
                 </div>
     
     
                 <div> <!--NIC-->
                     <label >NIC</label><br>
                     <input id="nic" type="text" name="nic" readonly>
-                    <label id="lblNic" style="color: red; visibility: hidden;"></label>
                 </div>
             </div>
         
@@ -90,10 +85,7 @@
                     <input id="city" type="text" placeholder="City" name="city" readonly>
                     <input id="province" type="text" placeholder="Provice" name="province" readonly>
                     <input id="country" type="text" placeholder="Country" name="country" readonly>
-                    <input id="postalCode" type="number" placeholder="Postal Code(number)" name="postalCode" readonly>
-
-                    <label id="lblPostalCode" style="color: red; visibility: hidden;"></label>
-                    
+                    <input id="postalCode" type="number" placeholder="Postal Code(number)" name="postalCode" readonly>                    
                 </div>
             </div>
     
@@ -103,7 +95,6 @@
                 <div>
                     <label >Phone</label><br>
                     <input id="phone" type="tel" placeholder="(076) 757-1212" name="phone" readonly>
-                    <label id="lblPhone" style="color: red; visibility: hidden;"></label>
                 </div>
             
                 <!-- <div> 

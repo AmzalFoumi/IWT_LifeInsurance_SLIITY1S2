@@ -17,7 +17,7 @@ if ($conn->connect_error) {
 // Check if request method is POST (form submission)
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
-  $policyHolderId = 2; // Assuming you have a way to get the policy holder ID
+  $policyHolderId = 1; // Assuming you have a way to get the policy holder ID
 
   // Collect form data
   $name = $_POST["name"];
