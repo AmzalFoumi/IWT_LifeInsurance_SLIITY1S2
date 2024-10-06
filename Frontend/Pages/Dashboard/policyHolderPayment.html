@@ -20,8 +20,8 @@
             <a href="http://localhost/IWTProject/IWT_LifeInsurance_SLIITY1S2/Frontend/Pages/Dashboard/policyHolderProfile.html">Profile</a>
             <a href="http://localhost/IWTProject/IWT_LifeInsurance_SLIITY1S2/Frontend/Pages/Dashboard/policyHolderBeneficary.html">Beneficiary</a>
             <a href="http://localhost/IWTProject/IWT_LifeInsurance_SLIITY1S2/Frontend/Pages/Dashboard/policyHolderPaymentHistory.html">Payments</a>
-            <a href="#">Support</a>
-            <a href="#">Settings</a>
+            <!-- <a href="#">Support</a> -->
+            <a href="http://localhost/IWTProject/IWT_LifeInsurance_SLIITY1S2/Frontend/Pages/Dashboard/changePassword.html">Settings</a>
             <a id="logOut" href="#">Log Out</a>
         </div>
     </nav>
@@ -41,16 +41,18 @@
 
         <h2>Make Payment</h2> <br>
 
-        <form action="">
+        <form id="processPaymentForm" method="post">
             <div>
                <input type="number"> Due 
             </div>
             <br> <br>
         
             <div>
-                <input type="text" placeholder="Reference"> <br>
-                <input type="date" > <br>
-                <input type="number" placeholder="Amount"> <br>
+                <input id="policyHolder" type="number" name="policyHolder" placeholder="Policy Holder ID"> <br>
+                <input id="payId" type="number" name="payId" placeholder="payId"> <br>
+                <input id="reference" type="text" name="reference" placeholder="Reference"> <br>
+                <input id="date" type="date" name="date" > <br>
+                <input id="amount" type="number" name="amount" placeholder="Amount"> <br>
                 <!-- Upload Receipt <input type="file"> -->
             </div>
         
@@ -58,14 +60,16 @@
                 <button class="button"> <!--cancel button-->
                     <a href="http://localhost/IWTProject/IWT_LifeInsurance_SLIITY1S2/Frontend/Pages/Dashboard/policyHolderPaymentHistory.html">Cancel</a>
                 </button>
-            
-                <button class="button"> <!--Save changes button-->
+                <input type="submit" class="button">
+                <button  class="button">
                    Pay
                 </button>
             </div>
         </form>
     </div>
     
+    <script src="../Assets/JS/processPayment.js"></script>
+
     
 </body>
 </html>
