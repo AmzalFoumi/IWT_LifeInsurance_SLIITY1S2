@@ -15,12 +15,8 @@
     padding: 6px 40px 6px 40px;
     text-decoration: none;
     font-size: 25px;
-    color: #818181;
+    color: #dbdbdb;
     display: block;
-  }
-  .sidenav a.active {
-    background-color: #b4b4b4;
-    color: white;
   }
   
   .sidenav a:hover:not(.active) {

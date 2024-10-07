@@ -4,11 +4,11 @@
 
     $connection = DB_conn();
 
-    $name = $_SESSION['emp_name'];
+    $empName = $_SESSION['emp_name'];
     $empId = $_SESSION['emp_id'];
     $empRole = $_SESSION['emp_role'];
      
-    echo json_encode(["name" => $name, "empId" => $empId, "empRole" => $empRole]);
+    echo json_encode(["empName" => $empName, "empId" => $empId, "empRole" => $empRole]);
 
     $connection->close();
     

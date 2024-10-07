@@ -16,13 +16,13 @@ $sql->execute();
 
 $result = $sql->get_result();
 
-while ($row = $result->fetch_assoc()) { // Fetch each row as an associative array
-    // Output the row data
+while ($row = $result->fetch_assoc()) { 
+    
     echo "PolicyId: " . $row['PolicyId'] . "<br>";
     echo "PolicyName: " . $row['PolicyName'] . "<br>";
     echo "Coverage: ". $row['Coverage'] . "<br>";
     echo "Premium" . $row['Premium'] . "<br>";
-    // ... other fields
+
 }
 
 
