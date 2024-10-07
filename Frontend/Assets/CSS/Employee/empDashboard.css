@@ -11,3 +11,9 @@
 #contentContainer h1{
     font-size: 4rem;
 }
+
+#contentContainer img {
+    height: 150px;
+    width: 130px;
+    border-radius: 50%;
+}

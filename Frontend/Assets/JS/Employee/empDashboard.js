@@ -7,6 +7,7 @@ document.addEventListener("DOMContentLoaded", function(){
     .then(data => {
         displayArea = document.getElementById('contentContainer');
         displayArea.innerHTML = `
+        <img src="${baseURL}/Frontend/Assets/Images/profilePicture.png">
         <h1>OneLife Administration System</h1><br>
         <h2>Welcome ${data.empName}</h2>
         <p>Employee ID: ${data.empId}</p>
