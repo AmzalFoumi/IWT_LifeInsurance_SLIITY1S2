@@ -21,8 +21,8 @@
             <a href="http://localhost/IWTProject/IWT_LifeInsurance_SLIITY1S2/Frontend/Pages/Dashboard/policyHolderProfile.html">Profile</a>
             <a href="http://localhost/IWTProject/IWT_LifeInsurance_SLIITY1S2/Frontend/Pages/Dashboard/policyHolderBeneficary.html">Beneficiary</a>
             <a href="http://localhost/IWTProject/IWT_LifeInsurance_SLIITY1S2/Frontend/Pages/Dashboard/policyHolderPaymentHistory.html">Payments</a>
-            <a href="#">Support</a>
-            <a href="#">Settings</a>
+            <!-- <a href="#">Support</a> -->
+            <a href="http://localhost/IWTProject/IWT_LifeInsurance_SLIITY1S2/Frontend/Pages/Dashboard/changePassword.html">Settings</a>
             <a id="logOut" href="#">Log Out</a>
         </div>
     </nav>
@@ -56,8 +56,8 @@
             <th>Province</th>
             <th>Country</th>
             <th>Postal Code</th>
-            <th>Phone number</th>
-            <th>Delete</th>
+            <!-- <th>Phone number</th> -->
+            <!-- <th>Delete</th> -->
         </tr>
 
 
@@ -114,14 +114,47 @@
                     row.appendChild(phoneCodeCell);
 
                 
+
                     
                     // this code for delete button is below, have to fix it to wotk properly
+                    const deleteButton = document.createElement('button');
+                    deleteButton.textContent = "Delete";
+                    row.appendChild(deleteButton);
+                    deleteButton.classList.add("deleteButton");
                     
+
+
+                    deleteButton.addEventListener('click', () => {
+    // Code to handle delete action here
+    const beneficiaryId = item.BeneficiaryId; // Assuming there's a BeneficiaryId property
+
+    // Send an AJAX request to delete_beneficiary.php
+    fetch(`deleteBeneficiary.php?BeneficiaryId=${beneficiaryId}`, { method: 'DELETE' })
+        .then(response => {
+            if (response.ok) {
+                // Remove the table row from the DOM on successful deletion
+                row.remove();
+                console.log('Beneficiary deleted successfully');
+            } else {
+                console.error('Error deleting beneficiary:', response.statusText);
+                // Optionally display an error message to the user
+            }
+        })
+        .catch(error => {
+            console.error('Error deleting beneficiary:', error);
+            // Optionally display an error message to the user
+        });
+});
+                    
+
+            
+                   
 
 
                     // Append the row to the data container
                     container.appendChild(row);
                 });
+                
             })
             .catch(error => {
                 console.error('Error fetching data:', error);
