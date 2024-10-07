@@ -4,7 +4,7 @@ require_once "./include/DB_connect.php";
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
 
-    $fullname = $_POST['fullname'];
+    $fullname = $_POST['fullName'];
     $nic = $_POST['nic'];
     $dob = $_POST['dob'];
     $income = $_POST['income'];
@@ -13,12 +13,8 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $city = $_POST['city'];
     $province = $_POST['province'];
     $country = $_POST['country'];
-
-    if (isset($_POST['policyId']) && $_POST['policyId'] !== 'null') {
-        $policyId = (int)$_POST['policyId'];
-    } else {
-        $policyId = null;
-    }
+    $policyId = (int)$_POST['policyId'];
+    
 
     $connection = DB_conn();
 

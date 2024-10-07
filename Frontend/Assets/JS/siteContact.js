@@ -10,7 +10,7 @@ document.getElementById("contactForm").addEventListener("submit", function(event
     const inqType = document.getElementById("inqType").value;
     const message = document.getElementById("message").value;
     
-    //Modified the code to bring in the policyId input from Lakshan's productPages. - Amzal
+    //Modified the code to bring in the policyId input from Lakshan's product page inquiry forms. - Amzal
     /*if(document.getElementById("policyId")){
         const policyId = document.getElementById("policyId").value;
     } else {
@@ -54,7 +54,7 @@ document.getElementById("contactForm").addEventListener("submit", function(event
         if(data){
             responseDisplay.innerText = data.message;    //Display the response sent by the backend
         } else {
-            responseDisplay.innerText = data.message;   //Error displayed if nothing is received from the server
+            responseDisplay.innerText = "No response from server";   //Error displayed if nothing is received from the server
         }
         
     })

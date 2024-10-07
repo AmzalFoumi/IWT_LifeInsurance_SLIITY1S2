@@ -34,7 +34,7 @@
                 font-weight: bold;
             }
 
-            input[type="text"]{
+            input[type="text"], select{
                 width: 100%;
                 padding: 8px;
                 margin-bottom: 20px;
@@ -78,9 +78,9 @@
             <h2>Registration Form</h2>
         </center>
         <div class ="container"> 
-            <form  method="post">
+            <form id="policyApplication" method="post">
 
-                <label for="policyType">Inquiry Type: </label>
+                <label for="policyType">Policy Type you wish to apply for: </label>
                 <select name="policyType" id="policyType">
                     <option value="1">1 - Onelife Regular</option>
                     <option value="2">2 - Onelife++</option>
@@ -88,7 +88,7 @@
                 </select>
                 
                 <label for="Full Name"> Full Name:</label>
-                <input type="text" name="fullname" placeholder="Full Name" required><br><br/>
+                <input type="text" id="fullName" name="fullName" placeholder="Full Name" required><br><br/>
         
                 <label for="nic">NIC:</label>
                 <input type="text" id="nic" name="nic" length="20" required><br><br>
@@ -115,7 +115,12 @@
                 <input type="text" id="country" name="country" length="50" required><br><br>
         
                 <button type="submit">Submit Application</button>
+                <br>
                 <button type="reset" >Reset Application</button>  
+                <br>
+                <div id="responseArea">
+                    <!--Response will come here-->
+                </div>
             </form>
         </div>  
         <script src="../Assets/JS/policyApplication.js"></script>
