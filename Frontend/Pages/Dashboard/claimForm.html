@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OneLife Insurance - Claim Form</title>
+    <style>
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        label {
+            font-weight: bold;
+            margin-bottom: 5px;
+            display: block;
+        }
+
+        input[type="text"], input[type="file"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        button {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            background-color: #1e68ca;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #213c88;
+        }
+
+        .upload-info {
+            font-size: 14px;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>OneLife Insurance </h1>
+
+    <section class="form-section">
+        <h2>Claim Form - </h2>
+        <p><strong>NOTE:</strong> THE ISSUE OF THIS FORM IS NOT TO BE TAKEN AS AN ADMISSION OF LIABILITY</p>
+
+     
+        <form action="/submit-claim" method="POST" enctype="multipart/form-data">
+          
+            <label for="name">Policy Holder's Name:</label>
+            <input type="text" id="name" name="name" placeholder="Enter Full Name" required>
+
+       
+            <label for="nic">NIC Number:</label>
+            <input type="text" id="nic" name="nic" placeholder="Enter NIC Number" required>
+
+       
+            <label for="document">Upload Supporting Document:</label>
+            <input type="file" id="document" name="document" accept=".pdf,.jpeg,.jpg,.png" required>
+
+            <p class="upload-info">*Only PDF, JPEG, JPG, and PNG file types are allowed. Maximum file size: 1MB.</p>
+
+        
+            <button type="submit">Submit Claim</button>
+        </form>
+    </div>
+
+</body>
+</html>
