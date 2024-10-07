@@ -8,7 +8,7 @@
     overflow: hidden;
     border-radius: 3rem;
     background-color: azure;
-    border: solid black;
+    /*border: solid black;*/
 }
 
 #banner img{
@@ -17,7 +17,7 @@
 }
 
 #bannerText{
-    text-align: justify;
+    text-align: left;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -32,22 +32,28 @@
 #productList{
     display: flex;
     width: 100%;
+    height: 100%;
     justify-content: space-evenly;
     align-items: center;
-    padding: 10px 0 10px 0;
+    /*padding: 10px 0 10px 0;*/
 
-    border: solid black;
+    border: solid;
 }
 
 .product-card{
     background-color: #639CD9;;
     width: 230px;
+    height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
+    align-items: center;    
+}
 
-    border: solid black;
+.product-card a{
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .product-card-image{
@@ -55,14 +61,14 @@
     max-height: 200px;
     margin: 10% 10% 0 10%;
 
-    border: solid black;
+    
 }
 
 .product-card-text{
     width: 100%;
     background-color: #327ed040; 
 
-    border: solid black;
+    
 }
 
 /*CSS to change the text within the product cards*/
@@ -79,7 +85,7 @@
 .product-card p{
     margin:1% 10% 10% 10%;
     color: #ffffff;
-    text-align: justify;
+    text-align: center;
 }
 
 /*CSS related to the products list ends*/

@@ -139,4 +139,31 @@ CREATE TABLE Inquiry (
 )
 
 
+CREATE TABLE Processes_emp_polApp(
+	EmpId INT ,
+	ApplicationId INT,
+	DateAccessed DATE,
+	CONSTRAINT emp_polapp_pk PRIMARY KEY(EmpId,ApplicationId),
+	CONSTRAINT emp_polapp_fk1 FOREIGN KEY (EmpId) REFERENCES Employee(EmpID),
+	CONSTRAINT emp_polapp_fk2 FOREIGN KEY (ApplicationId) REFERENCES Policy_Application(ApplicationId)
+)
 
+
+CREATE TABLE Processes_emp_inquiry(
+	EmpId INT ,
+	InqId INT,
+	DateAccessed DATE,
+	CONSTRAINT emp_inquiry_pk PRIMARY KEY(EmpId,InqId),
+	CONSTRAINT emp_inquiry_fk1 FOREIGN KEY (EmpId) REFERENCES Employee(EmpID),
+	CONSTRAINT emp_inquiry_fk2 FOREIGN KEY (InqId) REFERENCES Inquiry(InqId)
+)
+
+
+CREATE TABLE Processes_emp_claim(
+	EmpId INT ,
+	ClaimId INT,
+	DateAccessed DATE,
+	CONSTRAINT emp_claim_pk PRIMARY KEY(EmpId,ClaimId),
+	CONSTRAINT emp_claim_fk1 FOREIGN KEY (EmpId) REFERENCES Employee(EmpID),
+	CONSTRAINT emp_claim_fk2 FOREIGN KEY (ClaimId) REFERENCES Claim(ClaimId)
+)

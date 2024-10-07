@@ -12,68 +12,63 @@
 
         <!--Page Content starts-->
         <div id="content"> 
-			<div>Contact Form</div>
-            <div>
-                <div>
-                    <div>
-                        <p>
-                            Hotline: 077 777 7777
-                        </p>
-                        <p>
-                            Email: info@onelife.lk
-                        </p>
-                        <p>
-                            Adress: No 39, Kawdana Road, Dehiwala, Sri Lanka
-                        </p>
-                    </div>
+			<div id="contactFormHeading">Contact Form</div>
+            <div id="formDiv">
+                <div id="contactDetails">
+                    <p>
+                        Hotline: 077 777 7777 
+                    </p>
+                    <p>
+                        Email: info@onelife.lk
+                    </p>
+                    <p>
+                        Adress: No 39, Kawdana Road,<br> Dehiwala, Sri Lanka
+                    </p>
+                    
                 </div>  
                 <div>
-                    <div>
-                        <form id="contactForm" method="post">
-                            <label for="fullName">Full Name: </label>
-                            <input type="text" name="fullName" id="fullName">
-                            <br>
+                    <form id="contactForm">
+                        
+                        <label for="fullName">Full Name: </label>
+                        <input type="text" name="fullName" id="fullName">
+                        
+                        
+                        <!--Dropdown to choose title starts-->
+                        <label for="title">Ttitle: </label>
+                        <select name="title" id="title">
+                            <option value="Mr">Mr</option>
+                            <option value="Mrs">Mrs</option>
+                            <option value="Ms">Ms</option>
+                            <option value="Rev">Rev</option>
+                        </select>
+                        
 
-                            <!--Radio to choose title starts-->
-                            <label>Title: </label>
-                            <label for="mr">Mr</label>
-                            <input type="radio" name="title" id="mr" value="Mr">
-                            <label for="mrs">Mrs</label>
-                            <input type="radio" name="title" id="mrs" value="Mrs">
-                            <label for="ms">Ms</label>
-                            <input type="radio" name="title" id="ms" value="Ms">
-                            <label for="rev">Rev</label>
-                            <input type="radio" name="title" id="rev" value="Rev">
-                            <!--Radio to choose title ends-->
-                            <br>
+                        <label for="mobNum">Mobile Number: </label>
+                        <input type="tel" name="mobNum" id="mobNum">
+                        
 
-                            <label for="mobNum">Mobile Number: </label>
-                            <input type="tel" name="mobNum" id="mobNum" pattern="[0-9]{10}">
-                            <br>
+                        <label for="email">Email: </label>
+                        <input type="text" name="email" id="email">
+                        
 
-                            <label for="email">Email: </label>
-                            <input type="email" name="email" id="email">
-                            <br>
+                        <!--Dropdown to choose Inquiry type-->
+                        <label for="inqType">Inquiry Type: </label>
+                        <select name="inqType" id="inqType">
+                            <option value="Consult">Consultation</option>
+                            <option value="Complaint">Complaint</option>
+                        </select>
+                        
 
-                            <!--Dropdown to choose Inquiry type-->
-                            <label for="inqType">Inquiry Type: </label>
-                            <select name="inqType" id="inqType">
-                                <option value="consult">Consultation</option>
-                                <option value="complaint">Complaint</option>
-                            </select>
-                            <br>
-
-                            <label for="message">Message: </label>
-                            <textarea name="message" id="message" placeholder="Enter message here..."></textarea>
-                            <br>
-
+                        <label for="message">Message: </label>
+                        <textarea name="message" id="message" placeholder="Enter message here..."></textarea>
+                        
+                        <div id="btn">   
                             <input type="submit" value="Send">
 
                             <input type="reset" value="Cancel">
-
-                        </form>
-                        <div id="responseArea"></div>
-                    </div>
+                        </div> 
+                    </form>
+                    <div id="responseArea"></div>
                 </div>  
             </div>
             
