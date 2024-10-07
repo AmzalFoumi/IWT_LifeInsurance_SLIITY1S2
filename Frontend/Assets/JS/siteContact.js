@@ -9,9 +9,20 @@ document.getElementById("contactForm").addEventListener("submit", function(event
     const email = document.getElementById("email").value;
     const inqType = document.getElementById("inqType").value;
     const message = document.getElementById("message").value;
-
-
-    //Validation to make sure all fields are required
+    
+    //Modified the code to bring in the policyId input from Lakshan's productPages. - Amzal
+    /*if(document.getElementById("policyId")){
+        const policyId = document.getElementById("policyId").value;
+    } else {
+        const policyId = "";
+    }*/
+    let policyId = null;
+    const policyIdElement = document.getElementById("policyId");
+    if (policyIdElement && policyIdElement.value) {
+        policyId = parseInt(policyIdElement.value); 
+    }
+    
+    //Validation 
     if (!fullName || !title || !mobNum || !email || !inqType || !message) {
         alert("Please fill in all required fields.");
         return;
@@ -19,13 +30,14 @@ document.getElementById("contactForm").addEventListener("submit", function(event
 
     if (!isValidEmail(email)) {
         alert("Please enter a valid email address.");
-        return; // Stop the form submission
+        return; 
     }
 
     if (!isValidMobileNumber(mobNum)) {
         alert("Please enter a valid mobile number.");
-        return; // Stop the form submission
+        return; 
     }
+
 
     fetch(`${baseURL}/siteContact.php`,{     
         //Specifying method as POST
@@ -33,7 +45,7 @@ document.getElementById("contactForm").addEventListener("submit", function(event
         //Specifying that the data is being sent as URL-encoded data
         headers: {'Content-Type' : 'application/x-www-form-urlencoded'},
         //Data sent to server as URL encoded string, in key-value pairs.  PHP file reads the key
-        body: `fullName=${fullName}&title=${title}&mobNum=${mobNum}&email=${email}&inqType=${inqType}&message=${message}`  
+        body: `fullName=${fullName}&title=${title}&mobNum=${mobNum}&email=${email}&inqType=${inqType}&message=${message}&policyId=${policyId}`  
     })
     .then(response => response.json())       //Reads the body of the response object and parses it as JSON. Returns a promise. 
     .then(data => {

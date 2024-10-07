@@ -5,21 +5,28 @@
 <?php
 
     if ($_SERVER["REQUEST_METHOD"] === "POST"){
-        $name = $_REQUEST['fullName'];    //the strings within the square brackets are the keys of the key-value pairs in the url encoded string sent by the JavaScript file
-        $title = $_REQUEST['title'];
-        $mobNum = $_REQUEST['mobNum'];
-        $email = $_REQUEST['email'];
-        $inqType = $_REQUEST['inqType'];
-        $msg = $_REQUEST['message'];
+        $name = $_POST['fullName'];    //the strings within the square brackets are the keys of the key-value pairs in the url encoded string sent by the JavaScript file
+        $title = $_POST['title'];
+        $mobNum = $_POST['mobNum'];
+        $email = $_POST['email'];
+        $inqType = $_POST['inqType'];
+        $msg = $_POST['message'];
+        //$policyId = $_POST['policyId'];
+
+        if (isset($_POST['policyId']) && $_POST['policyId'] !== 'null') {
+            $policyId = (int)$_POST['policyId'];
+        } else {
+            $policyId = null;
+        }
 
         $connection = DB_conn();   //Establishing the connection
 
-        $sql = $connection -> prepare ("INSERT INTO inquiry(Name,Title,InqType,MobNum,Email,Message) VALUES (?,?,?,?,?,?)");   //remember to change IndId to InqID when going to permanent DB 
+        $sql = $connection -> prepare ("INSERT INTO inquiry(Name,Title,InqType,MobNum,Email,Message,PolicyId) VALUES (?,?,?,?,?,?,?)");   //remember to change IndId to InqID when going to permanent DB 
         //Using prepared statements to seperate the query structure from the actual data. This helps in readability, security and flexibility
         //Its also considered an industry standard.
 
 
-        $sql -> bind_param("ssssss",$name, $title, $inqType, $mobNum, $email, $msg);  //Binding parameters to prepared statement
+        $sql -> bind_param("ssssssi",$name, $title, $inqType, $mobNum, $email, $msg, $policyId);  //Binding parameters to prepared statement
 
         $result = $sql -> execute();
 
