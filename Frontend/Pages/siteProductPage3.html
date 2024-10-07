@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>
+        Product Details Page
+    </title>
+    <meta charset="UTF-8">
+    
+        
+    
+    
+    <link rel="stylesheet" href="../Assets/CSS/siteProductPage.css">
+</head>
+
+
+<body>
+    <!--Header of the page-->
+    <header id="header-container"></header>
+    
+    <div style="text-align: center;">
+        <img src="../Assets/Images/abtusbanner.jpeg" style="width:1800px;height:300px;">
+    </div>
+    
+
+    <div class="container">
+        <div id="main">
+            <div class="product-name">OneLife Premium</div>
+            <a href="./policyApplication.html" class="apply-now" id="applyBtn">Apply Now!</a>
+            <div class="product-description">
+                The Highest Coverage we provide, for the higher risk you!
+            </div>
+        </div>
+
+        <h3>Inquire Now!</h3>
+        <form id="contactForm">
+
+            <!--Sending data releated to the page itself-->
+            <input type="hidden" value="Consultation from Product" id="inqType">
+            <input type="hidden" value="3" id="policyId">
+            
+            <label for="title">Title</label>
+            <select name="title" id="title" required>
+                <option value="Rev">Rev</option>
+                <option value="Mr">Mr.</option>
+                <option value="Ms">Ms.</option>
+                <option value="Mrs">Mrs.</option>
+                
+            </select>
+        
+            <label for="fullname">Full Name</label>
+            <input type="text" name="fullName" id="fullName" required>
+
+            <label for="mobNum">Mobile Number</label>
+            <input type="tel" name="mobNum" id="mobNum" required>
+
+            <label for="email">Email</label>
+            <input type="text" name="email" id="email" required>
+        
+        
+            <label for="message">Message</label>
+            <textarea name="message" id="message" rows="10" required></textarea>
+        
+            <input type="reset" value="Cancel" id="cancelBtn">
+            <input type="submit" value="Submit" id="submitBtn">
+            
+        </form>
+        <div id="responseArea"></div>
+    </div>
+
+    <!--Footer of the page-->
+    <footer id="footer-container"></footer>
+
+    <script src="../Assets/JS/siteHeaderFooter.js"></script>
+
+    <script>
+        // JavaScript to handle button click
+        document.getElementById('applyBtn').addEventListener('click', function() {
+            alert('Apply button clicked!');
+        });
+
+    </script>
+    <script src="../Assets/JS/siteContact.js"></script>
+    
+</body>
+</html>

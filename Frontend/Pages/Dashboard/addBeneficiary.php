@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 $servername = "localhost";
 $username = "root";
 $password = "";
@@ -13,11 +13,12 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
+$policyHolderId = $_SESSION['user_id'];
 
 // Check if request method is POST (form submission)
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
-  $policyHolderId = 1; // Assuming you have a way to get the policy holder ID
+   // Assuming you have a way to get the policy holder ID
 
   // Collect form data
   $name = $_POST["name"];
@@ -36,6 +37,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
   // Execute statement and check result
   if ($sql->execute()) {
+    header('Location: http://localhost/IWTProject/IWT_LifeInsurance_SLIITY1S2/Frontend/Pages/Dashboard/policyHolderBeneficary.html');
+    exit();
     echo "Beneficiary added successfully!";
   } else {
     echo "Error adding beneficiary: " . $conn->error;

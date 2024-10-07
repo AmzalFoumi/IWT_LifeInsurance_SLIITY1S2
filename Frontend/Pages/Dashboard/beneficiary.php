@@ -1,4 +1,7 @@
 <?php
+
+session_start();
+
 // Database connection details
 $servername = "localhost";
 $username = "root";
@@ -31,10 +34,12 @@ if ($conn->connect_error) {
 //         AND b.BeneficiaryId = p.BeneficiaryId
 //         WHERE b.PolicyholderId = 1";
 
+$policyHolderId = $_SESSION['user_id'];
+
 //this is to retrieve data from beneficary table
 $sql = "SELECT *
         FROM beneficiary
-        WHERE PolicyholderId = 1";
+        WHERE PolicyholderId = $policyHolderId";
         
     
 $result = $conn->query($sql);

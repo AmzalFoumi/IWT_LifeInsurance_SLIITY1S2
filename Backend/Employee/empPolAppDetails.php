@@ -114,14 +114,12 @@
             $province = $polApp['Province'];
             $country = $polApp['Country'];
 
-            //Start of inserting data into policyholder table:
+            //Inserting data into policyholder table:
             $sql_insert = "INSERT INTO policyholder (PolicyID, NIC, Name, DOB, Income, Street, Postal_Code, City, Province, Country, Username, Password) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
             $stmt_insert = $connection->prepare($sql_insert);
             $stmt_insert->bind_param("isssisssssss", $policyId, $nic, $name, $dob, $income, $street, $postal_code, $city, $province, $country, $username, $hash);
             $result_insert = $stmt_insert->execute();
-            //End of inserting data into policyholder table:
-            
-            //If code block is here to check if $stmt_insert->execute() ran smoothly and returned true
+
             if ($result_insert) {
             //Start of deleting the policy application record if successful insertion in PolicyHolder table occurs
             $sql_delete = "DELETE FROM policy_application WHERE ApplicationId = ?";

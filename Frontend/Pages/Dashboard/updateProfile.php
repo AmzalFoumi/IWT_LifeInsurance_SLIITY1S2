@@ -1,4 +1,5 @@
 <?php
+session_start();
 
 
 $servername = "localhost";
@@ -13,6 +14,8 @@ $conn = new mysqli($servername, $username, $password, $dbname);
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
+
+$policyHolderId = $_SESSION['user_id'];
 
 
 // $newPolicyholderId = $_POST['policyholderId'];
@@ -32,10 +35,12 @@ $newCountry = $_POST['country'];
 $sql = "UPDATE policyholder
         SET Name = '$newName', NIC = '$newNic', DOB = '$newDob', Street = '$newStreet',
                     Postal_Code = '$newPostalCode', City = '$newCity', Province = '$newProvince', Country = '$newCountry', Username = '$newUsername'
-        WHERE PolicyholderId = 1";
+        WHERE PolicyholderId = $policyHolderId";
 
 
 if ($conn->query($sql)) {
+    header('Location: http://localhost/IWTProject/IWT_LifeInsurance_SLIITY1S2/Frontend/Pages/Dashboard/policyHolderProfile.html');
+    exit();
     echo "Data updated successfully";
 } else {
     echo "Error updating data: " . $conn->error;

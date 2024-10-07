@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 
 $servername = "localhost";
 $username = "root";
@@ -14,11 +14,16 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
+$policyHolderId = $_SESSION['user_id'];
 
+$sql="SELECT p.PolicyId, p.PolicyName, p.Coverage, p.Premium
+FROM policytype p, policyholder h
 
-$sql = "SELECT *
-FROM policytype
-WHERE PolicyId = 1";
+WHERE p.PolicyId = h.PolicyId AND h.PolicyholderId = $policyHolderId";
+
+// $sql = "SELECT *
+// FROM policytype
+// WHERE PolicyId = 1";
 
 
 $result = $conn->query($sql);
