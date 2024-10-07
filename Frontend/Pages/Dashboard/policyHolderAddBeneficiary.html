@@ -20,8 +20,8 @@
             <a href="http://localhost/IWTProject/IWT_LifeInsurance_SLIITY1S2/Frontend/Pages/Dashboard/policyHolderProfile.html">Profile</a>
             <a href="http://localhost/IWTProject/IWT_LifeInsurance_SLIITY1S2/Frontend/Pages/Dashboard/policyHolderBeneficary.html">Beneficiary</a>
             <a href="http://localhost/IWTProject/IWT_LifeInsurance_SLIITY1S2/Frontend/Pages/Dashboard/policyHolderPaymentHistory.html">Payments</a>
-            <a href="#">Support</a>
-            <a href="#">Settings</a>
+            <!-- <a href="#">Support</a> -->
+            <a href="http://localhost/IWTProject/IWT_LifeInsurance_SLIITY1S2/Frontend/Pages/Dashboard/changePassword.html">Settings</a>
             <a id="logOut" href="#">Log Out</a>
         </div>
     </nav>
@@ -41,11 +41,13 @@
 
     <h2>Adding Beneficiary</h2>
     
-    <form action="addBeneficiary.php" method="POST">
+    <form action="addBeneficiary.php" method="POST" id="addBeneficaryForm">
         <div> <!--full Name-->
             <div>
                 <label >Full Name</label><br>
                 <input id="name" type="text" name="name">
+                <!-- <label id="lblname"></label> -->
+                <label id="lblname" style="color: red; visibility: hidden;"></label>
             </div>
         
             <!--<div> 
@@ -61,6 +63,7 @@
             <div> <!--NIC-->
                 <label >NIC</label><br>
                 <input id="nic" type="text" name="nic">
+                <label id="lblnic" style="color: red; visibility: hidden;"></label>
             </div>
     
             <!--<div> relationship type
@@ -80,6 +83,7 @@
                 <input id="province" type="text" name="province" placeholder="Province">
                 <input id="country" type="text" name="country" placeholder="Country">
                 <input id="postalCode" type="number" name="postalCode" placeholder="Postal Code">
+                <label id="lblpostalcode" style="color: red; visibility: hidden;"></label>
             </div>
         </div>
     
@@ -103,6 +107,7 @@
             <div>
                 <label >Phone</label><br>
                 <input id="phone" type="tel" name="phone" placeholder="(076) 757-1212">
+                <label id="lblphone" style="color: red; visibility: hidden;"></label>
             </div>
         
             <!-- <div>
@@ -123,6 +128,9 @@
     </form>
         
     <script src="http://localhost/IWTProject/IWT_LifeInsurance_SLIITY1S2/Frontend/Assets/JS/policyHolder.js"></script>
+    <!-- <script src="../../Assets/JS/addBeneficiary.js"></script> -->
+    <script src="http://localhost/IWTProject/IWT_LifeInsurance_SLIITY1S2/Frontend/Assets/JS/addBeneficiary.js"></script>
+
     </div>
 
     
