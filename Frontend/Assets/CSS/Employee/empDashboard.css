@@ -10,10 +10,38 @@
 
 #contentContainer h1{
     font-size: 4rem;
+    color: white;
+    padding: 15px;
+    border: solid #005eff79;
+    background-color:  #005eff81;
+    border-radius: 20px;
 }
 
 #contentContainer img {
     height: 150px;
     width: 130px;
     border-radius: 50%;
+}
+
+#contentContainer p{
+    padding: 15px;
+    border: solid #3d7debfe;
+    background-color:  #3d7deb53;
+    border-radius: 20px;
+}
+
+#staticContent button{
+    padding: 8px;
+    background-color: #005efffe;
+    color: white;
+    border: solid #005efffe;
+    border-radius: 10px;
+}
+
+#staticContent button:hover{
+    padding: 5px;
+    background-color: white;
+    color: #005efffe;
+    border: solid #005efffe;
+    border-radius: 10px;
 }
