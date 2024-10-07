@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>One Life Insurance - Claim Form</title>
+    
+    <link rel="stylesheet" href="IWTProject\IWT_LifeInsurance_SLIITY1S2\Frontend\Assets\CSS\Employee\claimApplicationPtA.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>OneLife Insurance</h1>
+        </header>
+
+        <section class="form-section">
+            <h2>Claim Form - Part A (Policy Holder's details)</h2>
+            <p><strong>NOTE:</strong> THE ISSUE OF THIS FORM IS NOT TO BE TAKEN AS AN ADMISSION OF LIABILITY</p>
+
+            <form>
+                <div class="form-group">
+                    <label for="fullname">Policy Holder's Full Name</label>
+                    <input type="text" id="fullname" name="fullname" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="nicnumber">Policy Holder's NIC Number</label>
+                    <input type="text" id="nicnumber" name="nicnumber" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="address1">Policy Holder's Address (line 1)</label>
+                    <input type="text" id="address1" name="address1" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="address2">Policy Holder's Address (line 2)</label>
+                    <input type="text" id="address2" name="address2">
+                </div>
+
+                <div class="form-group">
+                    <label for="zipcode">ZIP code</label>
+                    <input type="text" id="zipcode" name="zipcode">
+                </div>
+
+                <div class="form-group">
+                    <label for="contactnumber">Policy Holder's Contact Number</label>
+                    <input type="text" id="contactnumber" name="contactnumber" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="policytype">Policy Type</label>
+                    <select id="policytype" name="policytype" required>
+                        <option value="" disabled selected>Select policy type</option>
+                        <option value="life">Life Insurance</option>
+                        <option value="health">Health Insurance</option>
+                        <option value="auto">Auto Insurance</option>
+                        <option value="home">Home Insurance</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="claimtype">Claim Type</label>
+                    <select id="claimtype" name="claimtype" required>
+                        <option value="" disabled selected>Select claim type</option>
+                        <option value="accident">Accident</option>
+                        <option value="theft">Theft</option>
+                        <option value="fire">Fire</option>
+                        <option value="natural_disaster">Natural Disaster</option>
+                    </select>
+                </div>
+
+                <!-- Submit button could go here -->
+            </form>
+        </section>
+    </div>
+</body>
+</html>

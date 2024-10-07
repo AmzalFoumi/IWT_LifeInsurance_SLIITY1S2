@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>One Life Insurance - Claim Form Part B</title>
+
+    <link rel="stylesheet" href="IWTProject\IWT_LifeInsurance_SLIITY1S2\Frontend\Assets\CSS\Employee\claimApplicationPtA.css">
+<body>
+    <div class="container">
+        <header>
+            <h1>One Life Insurance</h1>
+        </header>
+
+        <section class="form-section">
+            <h2>Claim Form - Part B (Policy Details)</h2>
+            <p><strong>NOTE:</strong> THE ISSUE OF THIS FORM IS NOT TO BE TAKEN AS AN ADMISSION OF LIABILITY</p>
+
+            <form>
+                <!-- Face Amount & Premium -->
+                <div class="form-group">
+                    <label for="face-amount">Face Amount & Premium</label>
+                    <input type="text" id="face-amount" name="face-amount" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="annual-premium">Planned Annual Premium</label>
+                    <input type="text" id="annual-premium" name="annual-premium" required>
+                </div>
+
+                <!-- Payment Information -->
+                <div class="form-group">
+                    <label for="initial-premium">Payment Information</label>
+                    <div style="display: flex;">
+                        <input type="text" id="initial-premium" name="initial-premium" placeholder="A. Initial Premium" required>
+                        
+                        <select id="subsequent-premium" name="subsequent-premium">
+                            <option value="" disabled selected>Select B. Subsequent Premium</option>
+                            <option value="monthly">Monthly</option>
+                            <option value="quarterly">Quarterly</option>
+                            <option value="annually">Annually</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Reason for the Claim -->
+                <div class="form-group">
+                    <label for="claim-reason">Reason for the Claim</label>
+                    <textarea id="claim-reason" name="claim-reason" rows="4" required></textarea>
+                </div>
+
+                <!-- Supporting Documents -->
+                <div class="form-group">
+                    <label for="supporting-documents">Supporting Documents</label>
+                    <input type="file" id="supporting-documents" name="supporting-documents" accept=".pdf, .jpeg, .jpg, .png" required>
+                    <p>Must - Only PDF, JPEG, JPG, and PNG file types will be considered.<br>Maximum Upload File size: 1MB</p>
+                </div>
+            </form>
+        </section>
+    </div>
+</body>
+</html>
