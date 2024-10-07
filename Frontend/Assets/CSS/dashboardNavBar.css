@@ -2,10 +2,6 @@ body {
     font-family: "Lato", sans-serif;
   }
 
-/* .wrapper {
-    display: flex;
-    position: relative;
-} */
 
 .sidenav {
     height: 100%;
@@ -53,11 +49,7 @@ body {
     padding: 100px 10px 10px 30px;
   }
 
-  /* @media screen and (max-height: 450px) {
-    .sidenav {padding-top: 15px;}
-    .sidenav a {font-size: 18px;} 
-  } */
-
+ 
   #logo {
     width: 100px;
     align-self: center;
@@ -65,37 +57,6 @@ body {
 
   }
 
-
-  /* From here the header  */
-
-  /* .main_content {
-    width: 100%;
-    margin-left: 200px;
-  }
-
-  .main_content .header {
-    padding: 10px;
-    background: #fff;
-    color: #717171;
-    border-bottom: 1px solid #e0e4e8;
-   
-  }
-
-  .ul {
-    list-style-type: none;
-    display: flex;
-    justify-content: space-between;
-    margin-right: 0px 30pxpx;
-    
-   
-  }
-  
-
-  .right-align {
-    display: flex;
-    align-items: center;
-  }
-   */
 
 
    .header {
