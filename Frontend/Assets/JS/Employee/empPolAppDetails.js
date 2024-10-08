@@ -71,15 +71,48 @@ document.getElementById('approveApp').addEventListener("click", function(){
                             <input type="reset" value="Cancel">
                         </form>`;
 
-    //fetch php file when form is dubmitted
+    //fetch php file when form is submitted
     document.getElementById('policyholderAccForm').addEventListener("submit", function(event){
-
         event.preventDefault();
-    
+
+
         //Take username and password values from the form
         const username = document.getElementById('policyHolderUsername').value;
         const password = document.getElementById('policyHolderPassword').value;
+
+        //validation for the form that is generated using the approve button
+        if(!userName && !password){
+            alert("Please Enter a username and password");
+            return;
+        }
     
+        if(!userName){
+            alert("Please Enter a username");
+            return;
+        }
+    
+        if(!password){
+            alert("Please Enter a password");
+            return;
+        }
+    
+        if(!userName){
+            alert("Please Enter a username");
+            return;
+        }
+    
+        if(!isValidUsername(userName)){
+            alert(`"Please enter a valid one word username which starts with an alhabetical letter and then goes on to be alphanumerical. 
+                    Minimum length - 5 characters`);
+            return;
+        }
+
+        if(!isValidPassword(password)){
+            alert("Please enter a valid password that has no whitespace and atleast 5 characters long");
+            return;
+        }
+
+        //Sending message to the backend to run the policy approval function in PHP, for the applicationID in the page URL
         const urlParams = new URLSearchParams(window.location.search);        
         const polAppId = urlParams.get('polAppId');  // Retrieve inquiry ID from the URL
     
@@ -103,8 +136,18 @@ document.getElementById('approveApp').addEventListener("click", function(){
     })
 })
 
+//Functions to validate the account creation part in the policyholder approval process
+function isValidUsername(userName) {
+    const regex = /^[A-Za-z][A-Za-z0-9]{4,}$/;
+    return regex.test(userName);
+}
 
+function isValidPassword(password){
+    const passwordPattern = /^[^\s]{5,}$/;    //Any character except white space, minimum 5 characters length
+    return passwordPattern.test(password);
+}
 //End of approving application  (The button creates the form. Then form submission fetches the php file and calls the function)
+
 
 //For denying an application
 document.getElementById('denyApp').addEventListener("click", function(){
