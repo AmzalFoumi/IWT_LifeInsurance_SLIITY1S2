@@ -6,6 +6,29 @@ document.getElementById("loginForm").addEventListener("submit", function(event){
     const userName = document.getElementById('user').value;
     const password = document.getElementById('password').value;
 
+
+    if(!userName && !password){
+        alert("Please Enter a username and password");
+        return;
+    }
+
+    if(!userName){
+        alert("Please Enter a username");
+        return;
+    }
+
+    if(!password){
+        alert("Please Enter a password");
+        return;
+    }
+
+    if(!isValidUsername(userName)){
+        alert("Please enter a valid username");
+        return;
+    }
+
+
+
     fetch(`${baseURL}/Backend/empLogin.php`,{
         method: "POST",
         headers: {'Content-Type' : 'application/x-www-form-urlencoded'},
@@ -28,3 +51,11 @@ document.getElementById("loginForm").addEventListener("submit", function(event){
         }
     })
 })
+
+
+//validations
+function isValidUsername(userName) {
+    //Fist is a letter, then can do letters and numbers
+    const regex = /^[A-Za-z][A-Za-z0-9]{4,}$/;
+    return regex.test(userName);
+}

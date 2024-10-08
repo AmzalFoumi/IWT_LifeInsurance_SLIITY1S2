@@ -24,24 +24,38 @@
 }
 
 #contentContainer p{
+    color: white;
     padding: 15px;
     border: solid #3d7debfe;
     background-color:  #3d7deb53;
     border-radius: 20px;
 }
 
-#staticContent button{
+#staticContent button, #staticContent input[type="submit"], #staticContent input[type="reset"]{
     padding: 8px;
     background-color: #005efffe;
     color: white;
     border: solid #005efffe;
     border-radius: 10px;
+    margin-bottom: 10px;
 }
 
-#staticContent button:hover{
+#staticContent button:hover, #staticContent input[type="submit"]:hover, #staticContent input[type="reset"]:hover{
     padding: 5px;
+    margin: 3px;
     background-color: white;
     color: #005efffe;
     border: solid #005efffe;
     border-radius: 10px;
+    margin-bottom: 5px;
+}
+
+
+/*Specific CSS to the form generated in the policyholder approval part. If forms are generated in other pages as well, this will be re-used. - Amzal*/
+#staticContent #policyholderAccForm{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 0.5fr 0.5fr 1fr;
+    gap: 5px;
+    color: white;
 }
