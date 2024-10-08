@@ -64,9 +64,9 @@ document.getElementById('approveApp').addEventListener("click", function(){
     let formArea = document.getElementById('formArea');
     formArea.innerHTML = `<form id="policyholderAccForm">
                             <label for="policyHolderUsername">Enter the Username to be given to policyholder:</label>
-                            <input type="text" name="policyHolderUsername" id="policyHolderUsername"> <br>
+                            <input type="text" name="policyHolderUsername" id="policyHolderUsername"> 
                             <label for="policyHolderPassword">Enter new password: </label>
-                            <input type="password" name="policyHolderPassword" id="policyHolderPassword">
+                            <input type="password" name="policyHolderPassword" id="policyHolderPassword">  
                             <input type="submit" value="Add User">
                             <input type="reset" value="Cancel">
                         </form>`;
@@ -81,12 +81,12 @@ document.getElementById('approveApp').addEventListener("click", function(){
         const password = document.getElementById('policyHolderPassword').value;
 
         //validation for the form that is generated using the approve button
-        if(!userName && !password){
+        if(!username && !password){
             alert("Please Enter a username and password");
             return;
         }
     
-        if(!userName){
+        if(!username){
             alert("Please Enter a username");
             return;
         }
@@ -96,12 +96,12 @@ document.getElementById('approveApp').addEventListener("click", function(){
             return;
         }
     
-        if(!userName){
+        if(!username){
             alert("Please Enter a username");
             return;
         }
     
-        if(!isValidUsername(userName)){
+        if(!isValidUsername(username)){
             alert(`"Please enter a valid one word username which starts with an alhabetical letter and then goes on to be alphanumerical. 
                     Minimum length - 5 characters`);
             return;
@@ -138,8 +138,8 @@ document.getElementById('approveApp').addEventListener("click", function(){
 
 //Functions to validate the account creation part in the policyholder approval process
 function isValidUsername(userName) {
-    const regex = /^[A-Za-z][A-Za-z0-9]{4,}$/;
-    return regex.test(userName);
+    const usernamePattern = /^[A-Za-z][A-Za-z0-9]{4,}$/;   //Start with alphabet, then 4 or more alphanumerics
+    return usernamePattern.test(userName);
 }
 
 function isValidPassword(password){

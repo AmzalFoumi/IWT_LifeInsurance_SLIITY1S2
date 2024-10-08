@@ -10,12 +10,12 @@ document.getElementById("contactForm").addEventListener("submit", function(event
     const inqType = document.getElementById("inqType").value;
     const message = document.getElementById("message").value;
     
-    //Modified the code to bring in the policyId input from Lakshan's product page inquiry forms. - Amzal
+    //Modified the code to bring in the policyId input from product page inquiry forms. - Amzal
     /*if(document.getElementById("policyId")){
         const policyId = document.getElementById("policyId").value;
     } else {
         const policyId = "";
-    }*/
+    }*/   //Above code block didnt work as intended. Using block immediately below.
     let policyId = null;
     const policyIdElement = document.getElementById("policyId");
     if (policyIdElement && policyIdElement.value) {
@@ -25,6 +25,11 @@ document.getElementById("contactForm").addEventListener("submit", function(event
     //Validation 
     if (!fullName || !title || !mobNum || !email || !inqType || !message) {
         alert("Please fill in all required fields.");
+        return;
+    }
+
+    if (!isValidFullName(fullName)){
+        alert("Please enter a validname full using only the letters of the alphabet");
         return;
     }
 
@@ -39,6 +44,7 @@ document.getElementById("contactForm").addEventListener("submit", function(event
     }
 
 
+    //Sending the form data to the server
     fetch(`${baseURL}/siteContact.php`,{     
         //Specifying method as POST
         method: "POST",
@@ -74,5 +80,11 @@ function isValidMobileNumber(mobNum) {
     
     const mobNumRegex = /^\d{10}$/;
     return mobNumRegex.test(mobNum);
+}
+
+//Function to validate name
+function isValidFullName(name){
+    const nameRegex = /^[A-Za-z]+$/;
+    return nameRegex.test(name);
 }
 

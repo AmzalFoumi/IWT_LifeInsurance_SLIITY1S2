@@ -22,13 +22,8 @@ document.getElementById("loginForm").addEventListener("submit", function(event){
         return;
     }
 
-    if(!userName){
-        alert("Please Enter a username");
-        return;
-    }
-
     if(!isValidUsername(userName)){
-        alert("Please enter a valid one word username which starts with an alhabetical letter and then goes on to be alphanumerical");
+        alert("Please enter a valid username");
         return;
     }
 
@@ -61,6 +56,6 @@ document.getElementById("loginForm").addEventListener("submit", function(event){
 //validations
 function isValidUsername(userName) {
     //Fist is a letter, then can do letters and numbers
-    const regex = /^[A-Za-z][A-Za-z0-9]*$/;
+    const regex = /^[A-Za-z][A-Za-z0-9]{4,}$/;
     return regex.test(userName);
 }

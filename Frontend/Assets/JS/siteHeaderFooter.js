@@ -1,3 +1,4 @@
+//To load the headers and footers components' HTML pages to the right locations in the outer site
 function loadHeaderFooter() {
     fetch('../Components/siteHeader.html')
         .then(header => header.text())
